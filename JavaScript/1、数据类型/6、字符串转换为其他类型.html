@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串转换为其他类型</title>
+</head>
+<body>
+
+
+    <!-- 
+      1.将String类型转换为数值类型
+        - 如果字符串中都是数值, 那么就正常转换
+        - 如果字符串是一个空串""/"   ", 那么转换之后是0
+        - 如果字符串中不仅仅是数字, 那么转换之后是NaN
+
+        2.将Boolean类型转换为数值类型
+        - true转换之后是1
+        - false转换之后是0
+
+        3.将undefined类型转换为数值类型
+        - 转换之后是NaN
+
+        4.将null类型转换为数值类型
+        - 转换之后是0
+     -->
+
+    <script>
+
+        /*
+           在JavaScript中如果想将以上的四种基本数据类型转换为数值类型, 常用的方法有三种
+            1.通过Number(常量or变量);方式来转换
+            2.还可以通过数学运算中的+号和-号来转换
+            3.还可以通过parseInt(需要转换的字符串)/parseFloat(需要转换的字符串)
+        */ 
+             var  str2 = "12.34abc";
+             var  str3 = "12.34";
+             console.log(parseInt(str2));
+             console.log(parseFloat(str3));
+             console.log(Number(str));
+             console.log(Number(bool));
+
+            /**
+             * 任何简单类型转换成Number -- JS底层做了一个强制类型转换，把字符串转换成了Number进行运算
+             */
+            //变量-*/一个数字（有非数字字符会出现NaN）
+            var str = "11";
+            var bool = true;
+            console.log(typeof (str - 0));
+            console.log(typeof (bool - 0));
+            console.log(typeof (str * 1));
+            console.log(typeof (bool * 1));
+            console.log(typeof (str / 1));
+            console.log(typeof (bool / 1));
+
+            /*
+                转换成字符串
+                    1、如果变量有意义调用.tostring()使用转换
+                    2、如果变量没有意义使用String()转换
+            */ 
+            var bool = true;
+            var num = 111;
+            var aaa;
+            var bbb = null;
+            console.log(typeof (bool + ""));
+            console.log(typeof (num + ""));
+            console.log(typeof (aaa + ""));
+            console.log(aaa + "");
+            console.log(typeof (bbb + ""));
+
+            console.log(typeof (String(bool)));
+
+            //Null和undefined无toString方法
+            console.log(typeof (num .toString()));
+
+
+         /*
+            布尔类型 Boolean()-- undefined、null、0转完之后为false,数字和字符串转完之后为true
+         */
+         var date = new Date();
+             console.log(Boolean(0));
+             console.log(Boolean(""));
+             console.log(Boolean(null));
+             console.log(!!1);
+             console.log(!!"abc");
+             console.log(!!date);
+
+
+        /*
+            隐式数据类型转换：在运算过程中，程序自己进行的数据转换(程序员没有操作)
+        */
+            var h1 = 12;
+            var h2 = "3";
+            var h3 = h1 - h2;
+            alert(h3);
+            alert(typeof(h3));
+
+
+</script>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,150 @@
+1 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+<body>
+    
+    <script>
+        /*
+        数据类型：String 字符串、Number 数值、Boolean 布尔值、Null 空值、Undefined 未定义  Object 对象，Symbol
+             * number:数字类型(整数和小数)
+            * string:字符串类型(的值一般都是用单引号或者是双引号括起来)  "34"
+            * boolean:布尔类型(值只有两个,true(真1),false(假0))
+            * null:空类型,值只有一个:null,一个对象指向为空了,此时可以赋值为null
+            * undefined:未定义,值只有一个:undefined
+            * 什么情况下的结果是undefined
+            * 变量声明了,没有赋值,结果是undefined
+            * 函数没有明确返回值,如果接收了,结果也是undefined
+            * 如果一个变量的结果是undefined和一个数字进行计算,结果:NaN不是一个数字,也没有意义
+            * object:对象
+                1、内置对象function、Array、Date、RegExp、Error等都是属于Object类型
+                2、除了那五种基本数据类型之外，其他的，都称之为 Object类型
+                3、object类型是一个引用类型
+            * NaN：不是一个数字
+        */
+        /*
+        数据类型之间最大的区别：
+            1、基本数据类型：参数赋值的时候，传数值
+            2、引用数据类型：参数赋值的时候，传地址（修改的同一片内存空间）。
+        */ 
+      
+        //获取变量的类型：
+        var num=10
+        var str="小白"
+        var flag=true
+        var undef;
+        var obj=new Object();
+
+        // 使用typeof 变量获取变量的类型
+        console.log(typeof num);  //number
+        console.log(typeof str);  //string
+        console.log(typeof flag);  //boolean
+        console.log(typeof undef);  //undefined
+        console.log(typeof obj);  //object
+    
+
+    /*
+      数值型：Number：包括整数和浮点数（小数）
+        * 注意：
+        1、typeof Infinity的返回结果是number
+        2、typeof NaN的返回结果是number
+        3、Undefined和任何数值计算的结果为NaN。NaN 与任何值都不相等，包括 NaN 本身
+        4、isNaN() :任何不能被转换为数值的值，都会让这个函数返回 true
+    */ 
+      var num1 = 0.1;
+      var a = 100
+
+    //数值范围
+     console.log(Number.MIN_VALUE); //最小值为： 5e-324
+     console.log(Number.MAX_VALUE); //最小值为： 1.7976931348623157e+308
+     console.log(1/0);  //Infinity  无穷大
+     console.log(-1/0);  //-Infinity  无穷小
+
+    // NaN和isNaN()函数：1、NaN：非数值   2、不是一个数值，是数字返回false,是数字返回true
+    console.log("abc" / 18);       //结果是NaN
+    console.log("abc" * "abcd"); 
+    isNaN(NaN);// true
+    isNaN("blue"); // true
+	isNaN(123); // false
+     //不要用小数去验证小数.
+        //    var x=0.1;
+        //    var y=0.2;
+        //    var sum=x+y;
+        //    console.log(sum==0.3);
+
+     //不要用NaN验证是不是NaN
+        //  var num;
+        //  console.log(num+10==NaN);
+        //  console.log("您好"=="我好");
+
+
+
+
+    /*
+     字符串：
+        转义符：
+            1、\" 表示 "
+            2、\' 表示 '
+            3、\n 表示换行
+            4、\r 表示回车
+            5、\t 表示制表符
+            6、\b 表示空格
+            7、\\ 表示\
+    */ 
+    var str = "张明军";
+        console.log(str.length) //长度
+    var str1 = "你好"
+        str2 = "我好"
+        console.log(str1+str2); //+拼接：只要一个是字符串，都是拼接
+    var oneStr = '10';
+    var twoStr = 5;
+        console.log(str1-str2); //-减：有一个是字符串，另一个不是字符串，会进行计算，隐式转换
+
+     /*
+     布尔数据类型： 区分大小写(true,false)
+     */
+    var oneBool = 2;
+    var twoBool = 3;
+    alert(oneBool == twoBool);
+    alert(oneBool<twoBool);
+
+
+     /*
+        undefined 和 null ：
+            null:
+                1、专门用来表示一个为空的对象
+                2、 Null类型的值只有一个，就是nul
+                3、使用 typeof 检查一个null值时，会返回object
+            undefined：
+                1、声明了一个变量，但是没有赋值
+                2、Undefined类型的值只有一个，就是undefind
+                3、使用 type of 检查一个undefined时，会返回undefined。
+     */
+      var number;
+      alert(number)
+
+      if (null == undefined){    //结果为true
+            alert("张明军");
+       }
+
+      if (null === undefined){   //结果为false
+          alert("你好啊");
+       }
+       alert(10 + null);       //结果为10，任何值和null运算，null可看做0运算
+       alert(10 + undefined); // 结果为NaN，任何数据类型和undefined运算都是NaN;
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优先级</title>
+
+    <style>
+    
+      /*
+        间接选中
+        li{
+            color: blue;
+        }
+
+        ul{
+            color: red;
+        }
+     */
+
+     /*
+        相同选择器(直接选中)
+        p{
+            color: blue;
+        }
+
+        p{
+            color: red;
+        }
+     */
+
+/* 
+        id > 类 > 标签 > 通配符 > 继承 > 浏览器默认
+ */
+    #identity{
+        color: purple;
+    }
+
+    .para{
+        color: pink;
+    }
+
+    p{
+        color: green;
+    }
+
+    *{
+        color: blue;
+    }
+
+    li{
+        color: red;
+    }
+
+    
+    </style>
+
+</head>
+<body>
+
+    <ul>
+        <li>
+            <p id="identity" class="para">我是段落</p>
+        </li>
+    </ul>
+    
+</body>
+</html>
