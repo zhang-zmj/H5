@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素宽高其它方式</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            border: 50px solid #000;
+            background: red;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+<script>
+    /*
+    1、通过getComputedStyle获取宽高
+        * 获取的宽高不包括 边框和内边距
+        * 即可以获取行内设置的宽高也可以获取CSS设置的宽高
+        * 只支持获取, 不支持设置
+    */
+    var oDiv = document.getElementById("box");
+    // oDiv.style.width = "166px";
+    // oDiv.style.height = "166px";
+    // var style = getComputedStyle(oDiv);
+    // console.log(style.width);
+    // console.log(style.height);
+    
+
+    /*
+    2、通过style属性获取宽高
+        * 获取的宽高不包括 边框和内边距
+        * 只能获取内设置的宽高, 不能获取CSS设置的宽高
+        * 可以获取也可以设置
+        * 高级低级浏览器都支持
+    */
+    // oDiv.style.width = "166px";
+    // oDiv.style.height = "166px";
+    // console.log(oDiv.style.width);
+    // console.log(oDiv.style.height);
+
+    /*
+    3.offsetWidth和offsetHeight
+        * 获取的宽高包含 边框 + 内边距 + 元素宽高
+        * 即可以获取行内设置的宽高也可以获取CSS设置的宽高
+        * 只支持获取, 不支持设置
+        * 高级低级浏览器都支持
+    */
+    oDiv.style.width = "166px";
+    oDiv.style.height = "166px";
+    console.log(oDiv.offsetWidth);
+    console.log(oDiv.offsetHeight);
+
+
+    /*
+    1.getComputedStyle/style
+    获取的宽高不包括 边框和内边距
+
+    2.offsetWidth/offsetHeight
+    获取的宽高包括 边框和内边距
+
+    
+    3.getComputedStyle/currentStyle/offsetXXX
+    只支持获取, 不支持设置
+    4.style
+    可以获取, 也可以设置
+
+
+    5.getComputedStyle/offsetXXX
+    即可以获取行内,也可以获取外链和内联样式
+    6.style
+    只能获取行内样式
+    */
+
+
+
+
+</script>
+</body>
+</html>

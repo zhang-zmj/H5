@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>佩奇跟我走</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+<img src="images/pig.gif" alt="">
+<script>
+    
+    let oImg = document.querySelector("img");
+    let style = getComputedStyle(oImg);
+    document.body.onmousemove = function (event) {
+        event = event || window.event;
+        // console.log(event.clientX);
+        // console.log(event.clientY);
+        // oImg.style.marginLeft = event.clientX - parseFloat(style.width) / 2 + "px";
+        // oImg.style.marginTop = event.clientY - parseFloat(style.height) / 2 + "px";
+
+        oImg.style.marginLeft = event.pageX - parseFloat(style.width) / 2 + "px";
+        oImg.style.marginTop = event.pageY - parseFloat(style.height) / 2 + "px";
+    }
+     
+
+
+</script>
+</body>
+</html>
+
+
