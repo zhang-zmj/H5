@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>优先级</title>
+
+    <!--
+      1.什么是优先级?
+         作用:当多个选择器选中同一个标签, 并且给同一个标签设置相同的属性时, 如何层叠就由优先级来确定
+    -->
+
+    <style>
+      /*
+        间接选中（集成）：如果是间接选中, 那么就是谁离目标标签比较近就听谁的
+        li{
+            color: blue;
+        }
+
+        ul{
+            color: red;
+        }
+     */
+
+      /*
+        相同选择器(直接选中)： 谁写在后面就听谁的
+        p{
+            color: blue;
+        }
+
+        p{
+            color: red;
+        }
+     */
+
+      /* 
+        id > 类 > 标签 > 通配符 > 继承 > 浏览器默认
+     */
+      #identity {
+        color: purple;
+      }
+
+      .para {
+        color: pink;
+      }
+
+      p {
+        color: green;
+      }
+
+      * {
+        color: blue;
+      }
+
+      li {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <p id="identity" class="para">我是段落</p>
+      </li>
+    </ul>
+  </body>
+</html>

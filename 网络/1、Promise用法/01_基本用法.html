@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基本用法</title>
+  </head>
+  <body>
+    <!-- 
+    基本用法：
+      1、实例化Promise对象，构造函数中传递函数，该函数中用于处理异步任务
+      2、resolve和reject两个参数用于处理成功和失败两种情况，并通过p.then获取处理结果
+   -->
+
+    <script>
+      var p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          var flag = true;
+          if (flag) {
+            resolve("hello");
+          } else {
+            reject("出错了");
+          }
+        }, 1000);
+      });
+      p.then(
+        (data) => {
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    </script>
+  </body>
+</html>

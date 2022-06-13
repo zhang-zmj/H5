@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>序选择器上</title>
+
+    <style>
+      /*
+        根据指定属性名找到对应的标签，然后设置属性
+        input[type]{
+            color: red;
+        }
+
+        找到指定属性，并且属性的取值等于value的，然后设置属性
+        input[type=password]{
+            color: blue;
+        }
+    */
+
+      p[id] {
+        color: red;
+      }
+
+      p[class="cc"] {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="" />
+    <input type="password" name="" id="" />
+
+    <p id="identity1">我是段落1</p>
+    <p id="identity2" class="cc">我是段落2</p>
+    <p class="cc">我是段落3</p>
+    <p id="identity3" class="para">我是段落4</p>
+    <p>我是段落5</p>
+  </body>
+</html>

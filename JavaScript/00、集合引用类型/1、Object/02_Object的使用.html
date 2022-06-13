@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object的使用</title>
+  </head>
+  <body>
+    <script>
+      let person = {
+        name: "zhangmj",
+        age: 19,
+        5: true,
+      };
+
+      // 1、点语法取值
+      console.log(person.name);
+      // 2、属性取值
+      let propertyName = "age";
+      console.log(person["5"]);
+      console.log(person[propertyName]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>响应结果</title>
+  </head>
+  <body>
+    <!-- 
+  主要属性：
+    data:  响应回来的数据
+    headers: 响应头
+    status:  响应状态码
+    statusText: 响应状态信息
+ -->
+    <script type="text/javaScript" src="./js/axios.js"></script>
+    <script>
+      axion.get("https://www.baidu.com?id=123").then((res) => {
+        console.log(res.data.username);
+      });
+    </script>
+  </body>
+</html>

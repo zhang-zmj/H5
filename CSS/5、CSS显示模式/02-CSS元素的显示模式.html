@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>30-CSS元素的显示模式</title>
+    <style>
+      div {
+        background: red;
+        width: 200px;
+        height: 200px;
+      }
+      span {
+        background: blue;
+        width: 200px;
+        height: 200px;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+1.什么是块级元素, 什么是行内元素?
+  块级元素会独占一行，可以设置宽高
+  行内元素不会独占一行，不可以设置宽高
+
+  块级元素
+  p div h ul ol dl li dt dd
+  行内元素 ：所有的文本级元素是行内元素
+  span buis strong em ins del
+
+
+2.块级元素和行内元素的区别?
+  2.1块级元素
+    独占一行
+
+  2.2行内元素：
+    不会独占一行
+
+  2.3行内块级元素 
+    让元素既能够不独占一行, 又可以设置宽度和高度
+-->
+
+    <div>我是div</div>
+    <p>我是段落</p>
+    <h1>我是标题</h1>
+    <hr />
+    <span>我是span</span>
+    <b>我是加粗</b>
+    <strong>我是强调</strong>
+    <hr />
+    <img src="images/picture.jpg" alt="" />
+    <img src="images/picture.jpg" alt="" />
+  </body>
+</html>

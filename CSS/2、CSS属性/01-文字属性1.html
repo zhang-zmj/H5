@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>03-文字属性</title>
+    <style>
+      p {
+        /* 文字样式的属性： 
+            normal ： 正常的， 默认就是正常的
+            italic :  倾斜的
+        */
+        font-style: italic;
+        /* 
+          文字粗细的属性
+            单词取值:
+             bold 加粗
+             bolder  比加粗还要粗
+             lighter 细线， 默认就是细线
+            数字取值：
+             100-900之间整百的数字
+        */
+        font-weight: bold;
+
+        /* 
+         文字大小的属性
+        */
+        font-size: 10px;
+        /* 
+         文字字体的属性
+        */
+        font-family: "楷体";
+      }
+
+      div {
+        /* 
+          缩写格式:
+            font: weight style  size family;
+          注意：
+            sytle可以省略
+            weight可以省略  
+            在这种缩写格式中style和weight的位置可以交换
+        */
+        font: italic bold 10px "楷体";
+      }
+    </style>
+  </head>
+  <body>
+    <i>我是文字</i>
+    <b>我是文字</b>
+    <p>abc我是段落</p>
+
+    <div>abc我是段落</div>
+  </body>
+</html>

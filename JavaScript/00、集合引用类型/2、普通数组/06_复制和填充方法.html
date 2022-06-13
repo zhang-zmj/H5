@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组索引</title>
+  </head>
+  <body>
+    <script>
+      /*
+        copyWithin()：批量复制方法
+        fill()：填充数组方法，可以向已有数组中插入全部或部分相同的值
+      */
+
+      const zeroes = [0, 0, 0, 0, 0];
+      //1、填充整个数组
+      zeroes.fill(5);
+      console.log(zeroes);
+      zeroes.fill(0);
+      console.log(zeroes);
+
+      //2、用6填充索引大于等于3的元素
+      zeroes.fill(6, 3);
+      console.log(zeroes);
+      zeroes.fill(0);
+      console.log(zeroes);
+    </script>
+  </body>
+</html>

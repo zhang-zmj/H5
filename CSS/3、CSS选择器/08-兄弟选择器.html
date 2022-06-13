@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>-兄弟选择器</title>
+
+    <!-- 
+        兄弟选择器：
+            1、相邻兄弟选择器： 符号+
+                只能选中紧跟其后的那个标签，不能选中被隔离的标签
+            2、通用兄弟选择器： 符号~
+                选中都是同级别的标签
+    -->
+    <style>
+      /*
+        h1+p{
+            color: red;
+        }
+        */
+
+      h1 ~ p {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        <h1>我是标题</h1>
+        <a href="#">我是超链接</a>
+        <p>我是段落</p>
+        <p>我是段落</p>
+        <p>我是段落</p>
+        <h1>我是标题</h1>
+        <p>我是段落</p>
+        <p>我是段落</p>
+        <p>我是段落</p>
+     -->
+
+    <h1>我是标题</h1>
+    <a href="#">我是超链接</a>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <a href="#">我是超链接</a>
+    <p>我是段落</p>
+
+    <h1>我是标题</h1>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>序选择器下</title>
+
+    <style>
+      /* 
+        odd / 2n+1：奇数才被选中
+        even / 2n+0：偶数才被选中
+        2n+1： 
+      */
+      /*
+        p:nth-child(odd){
+            color: red;
+        }
+        p:nth-child(even){
+            color: green;
+        }
+
+        p:nth-of-type(odd){
+            color: red;
+        }
+        p:nth-of-type(even){
+            color: green;
+        }
+
+         p:nth-child(2n+0){
+            color: red;
+        }
+        p:nth-child(2n+1){
+            color: blue;
+        }
+
+    */
+
+      p:nth-child(3n + 0) {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>我是项目</p>
+    <p>我是项目</p>
+    <p>我是项目</p>
+    <p>我是项目</p>
+    <p>我是项目</p>
+    <p>我是项目</p>
+    <p>我是项目</p>
+  </body>
+</html>

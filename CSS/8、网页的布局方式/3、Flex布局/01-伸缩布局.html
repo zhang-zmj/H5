@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>伸缩布局.html</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+        border: 1px solid #000;
+        width: 600px;
+        margin: 100px auto;
+        display: flex;
+        /*overflow: hidden;*/
+      }
+      ul > li {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-size: 30px;
+        background: red;
+
+        /*display: inline-block;*/
+        /*float: left;*/
+      }
+      ul > li:nth-child(2) {
+        background: green;
+      }
+      ul > li:nth-child(3) {
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </body>
+</html>

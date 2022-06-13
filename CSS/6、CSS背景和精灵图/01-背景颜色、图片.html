@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>背景颜色、图片</title>
+
+    <!-- 
+        快捷键:
+        bc background-color: #fff;
+        bi background-image: url();     
+     -->
+    <style>
+      /* 背景颜色 */
+      .color {
+        width: 50px;
+        height: 50px;
+      }
+
+      .box1 {
+        /* background-color: red; */
+        /* background-color: rgb(0,255,0); */
+        /* background-color: rgba(0,0,255,0.7); */
+        background-color: #0ff;
+      }
+
+      /* 背景图片
+            * 如果图片的大小没有标签的大小大, 那么会自动在水平和垂直方向平铺来填充
+            * 如果网页上出现了图片, 那么浏览器会再次发送请求获取图片
+        */
+      .img {
+        width: 300px;
+        height: 300px;
+      }
+      .box2 {
+        background-image: url(../images/girl.jpg);
+        /*background-image: url(http://img4.imgtn.bdimg.com/it/u=2278032206,4196312526&fm=21&gp=0.jpg);*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1 color"></div>
+
+    <div class="box2 img"></div>
+  </body>
+</html>

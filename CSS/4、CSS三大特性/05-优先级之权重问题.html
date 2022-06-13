@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>优先级之权重问题</title>
+
+    <!-- 
+        权重计算：
+            1、id多的选择器优先计算权重
+            2、第二个看类名个数，类名个数多的优先级最高
+            3、如果类名个数一样，再看标签名称的个数，标签名称个数多的优先级最高
+            4、其他条件相同，谁排在后面，听谁的
+    -->
+    <style>
+      /*
+
+
+        #identity1 .box2{
+            color: red;
+        }
+
+        .box1 .box2{
+            color: green;
+        }
+
+        div ul li p{
+            color: blue;
+        }
+      */
+
+      /*   
+        .box1 .box2{
+            color: blue;
+        }
+
+        div .box2{
+            color: green;
+        }
+    */
+
+      /*
+        #identity1 ul li p{
+            color: red;
+        }
+        #identity1 ul p{
+            color: green;
+        }
+
+    */
+
+      /*
+        .box1 li #identity2{
+            color: blue;
+        }
+        
+        #identity1 ul .box2{
+            color: red;
+        }
+    */
+
+      /* 
+
+        .box2{
+            color: red;
+        }
+
+        li{
+            color: blue;
+        }
+
+        */
+    </style>
+  </head>
+  <body>
+    <div id="identity1" class="box1">
+      <ul>
+        <li>
+          <p id="identity2" class="box2">我是段落</p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

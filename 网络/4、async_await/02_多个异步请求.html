@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多个异步请求</title>
+  </head>
+  <body>
+    <script>
+      async function queryData(id) {
+       var info = await axios.get("async1");
+       var ret = await axios.get("async2?info=", info.data);
+        return ret;
+      }
+      queryData().then((data) => {
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>

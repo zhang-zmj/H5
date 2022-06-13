@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>响应结果</title>
+  </head>
+  <body>
+    <!-- 
+    text() 将返回体处理成字符串类型
+    json() 返回结果和JSON.parse(responseText)一样
+   -->
+
+    <script>
+      fetch("https://www.baidu.com/books")
+        .then((data) => {
+          // return data.json();
+
+          return data.text();
+        })
+        .then((data) => {
+          // console.log(data.username);
+
+          // 这一种返回的是一个string
+          var obj = JSON.parse(data);
+          console.log(obj.username);
+        });
+    </script>
+  </body>
+</html>

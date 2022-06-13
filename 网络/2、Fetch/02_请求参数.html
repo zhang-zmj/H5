@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>请求参数</title>
+  </head>
+  <body>
+    <!-- 
+    常用配置项
+      1、method： HTTP请求方法，默认GET(GET, POST, PUT, DELETE)
+      2、body: HTTP请求参数
+      3、headers： HTTP请求头，默认为{}          
+        
+   -->
+
+    <script>
+      // 传统的URL
+      fetch("https://www.baidu.com/books?id=123", {
+        method: "get",
+      })
+        .then((data) => {
+          return data.text();
+        })
+        .then((data) => {
+          console.log(data);
+        });
+
+      // Restful形式的URL
+      fetch("https://www.baidu.com/books/123", {
+        method: "get",
+      })
+        .then((data) => {
+          return data.text();
+        })
+        .then((data) => {
+          console.log(data);
+        });
+    </script>
+  </body>
+</html>

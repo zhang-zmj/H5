@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>常用的API</title>
+  </head>
+  <body>
+    <script type="text/javaScript" src="./js/axios.js"></script>
+    <script>
+      // 1、GET/DELETE传递参数
+      axion.get/delete("https://www.baidu.com?id=123").then((res) => {
+        // data 属性是固定的
+        console.log(res.data);
+      });
+      axion.get/delete("https://www.baidu.com/123").then((res) => {
+        console.log(res.data);
+      });
+      axion.get/delete("https://www.baidu.com/123", {
+        params: {
+          id: 123
+        }
+      }).then((res) => {
+        console.log(res.data);
+      });
+
+      
+      // POST/PUT参数传递
+      axion.post/put("https://www.baidu.com/123", {
+          username: "zhangmj",
+          pwd: 123
+      }).then((res) => {
+         console.log(res.data);
+      });
+
+      // 通过URLSearchParams传递参数 x-www-form-urlencoded
+      const params = new URLSearchParams();
+      params.append("param1", 'value1')
+      params.append("param2", 'value2')
+      axion.post("https://www.baidu.com",params).then((res) => {
+         console.log(res.data);
+      });
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>拦截器</title>
+  </head>
+  <body>
+    <script type="text/javaScript" src="./js/axios.js"></script>
+    <script>
+      // 请求拦截器
+      axios.interceptors.request.use(
+        (config) => {
+          console.log(config.url);
+          config.headers.mytoken = "nihao";
+          return config;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+
+      // 响应拦截器
+      axios.interceptors.response.use(
+        (res) => {
+          console.log(res);
+          var data = res.data;
+          return data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+      axion.get("https://www.baidu.com?id=123").then((res) => {
+        console.log(res.data.username);
+      });
+    </script>
+  </body>
+</html>

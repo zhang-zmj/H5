@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>继承性</title>
+
+    <!-- 
+        1、继承性： 给父元素设置的属性，子元素也可以使用
+        1、并不是所有的属性都能继承：
+            只有color/font-/text-/line开头的属性才能被集成
+        2、特殊性：
+            * a标签的颜色和下划线不能继承
+            * h标签的文字大小是不能继承的
+     -->
+    <style>
+      div {
+        color: red;
+        text-decoration: none;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>我是段落</p>
+    </div>
+
+    <div>
+      <ul>
+        <li>
+          <p>我是段落</p>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <a href="#">我是超链接</a>
+    </div>
+
+    <div>
+      <h1>我是大标题</h1>
+    </div>
+  </body>
+</html>

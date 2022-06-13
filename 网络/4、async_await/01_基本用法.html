@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基本用法</title>
+  </head>
+  <body>
+    <script>
+      // async function queryData(id) {
+      //   const ret = await axios.get("https://www.baidu.com");
+      //   return ret;
+      // }
+
+      async function queryData(id) {
+        var ret = await new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("Hello");
+          }, 1000);
+        });
+        return ret;
+      }
+      queryData().then((data) => {
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>发送多个请求</title>
+  </head>
+  <body>
+    <script>
+      var p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          var flag = true;
+          if (flag) {
+            resolve("hello");
+          } else {
+            reject("出错了");
+          }
+        }, 1000);
+      });
+
+      //第一次发送
+      p.then((data) => {
+        return p; // 返回新的Promise对象
+      })
+        //第二次发送
+        .then((data) => {
+          return p; // 返回新的Promise对象
+        })
+        .then((data) => {
+          return "zhangmj"; //返回普通值
+        })
+        .then((data) => {
+          console.log(data);
+        });
+    </script>
+  </body>
+</html>

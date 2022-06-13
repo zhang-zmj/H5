@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>01-文字属性</title>
+
+    <style>
+      /*
+        字体大小：font-size
+            单位： 数字 + px
+        字体粗细：font-weight
+            关键字：正常：normal   加粗：bold
+            纯数字：正常：400      加粗：700
+        字体样式：font-style
+            正常： normal
+            倾斜： italic
+        字体类型：font-family
+           字体类型： "Microsoft、serif、微软雅黑、黑体、宋体、楷体"
+           渲染规则：
+              从左往右按照顺序查找，如果都不支持，会显示操作系统默认字体
+            Windows：微软雅黑
+            MacOS  ： 平方
+        字体连写：font：
+          顺序要求：
+            1、style weight size family
+            2、只能省略前两个
+        注意：
+            1、谷歌浏览器默认字体大小：16px
+            2、单独的样式下载连写的下面
+        */
+
+      p {
+        /* font-size: 30px; */
+        /* font-weight: bold; */
+        /* font-style: italic; */
+        /* font-family: 楷体, 宋体, 隶书, sans-serif; */
+        font: italic 700 30px 楷体, 宋体, 隶书, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <i> 标签显示斜体文本效果 -->
+    <i>我是文字</i>
+    <!-- <b> 标签规定粗体文本 -->
+    <b>我是文字</b>
+    <p>abc我是段落</p>
+  </body>
+</html>
