@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array对象</title>
+
+</head>
+<body>
+
+    <script>
+
+        /*
+         1、判断是不是数组
+                Array.isArray(对象)---->判断这个对象是不是数组
+                instanceof关键字
+         2、.from() 方法从一个类似数组或可迭代对象中创建一个新的，浅拷贝的数组实例
+         3、.concat(数组,数组,数组,...) 组合一个新的数组
+         4、.every(函数)--返回值是布尔类型,函数作为参数使用,函数中有三个参数,
+              第一个参数是元素的值，第二个参数是索引值,第三个参数是原来的数组(没用)
+         5、.filter(函数);返回的是数组中每一个元素都符合条件的元素,组成了一个新的数组
+         6、.push(值);--->把值追加到数组中,加到最后了---返回值也是追加数据之后的数组长度
+         7、.pop();--->删除数组中最后一个元素,返回值就是删除的这个值
+         8、.shift();--->删除数组中第一个元素,返回值就是删除的这个值
+         9、.unshift();--->向数组的第一个元素前面插入一个新的元素,----返回值是插入后的程度
+         10、.forEach(函数)方法---遍历数组用---相当于for循环
+         12、.indexOf(元素值);返回的是索引,没有则是-1
+         13、.join("字符串");----返回的是一个字符串
+         14、 .map(函数);--->数组中的每个元素都要执行这个函数,把执行后的结果重新的全部的放在一个新的数组中
+         15、.reverse();----->反转数组
+         16、.sort();---排序的,可能不稳定,如果不稳定,请写MDN中的那个固定的代码
+         17、.slice(开始的索引,结束的索引);把截取的数组的值放在一个新的数组中,但是不包含结束的索引对应的元素值
+         18、.splice(开始的位置,要删除的个数,替换的元素的值);一般是用于删除数组中的元素,或者是替换元素,或者是插入元素
+        */ 
+        
+        // 创建函数
+            var array = new Array();
+            var array2 = [];
+
+
+        // 判断是不是数组类型
+             var obj = [];
+                 console.log(obj instanceof Array);
+                 console.log(Array.isArray(obj));
+
+
+        // 从一个类似数组或可迭代对象中创建一个新的，浅拷贝的数组实例
+            var arr=["a","b","c"];
+            var newArr=Array.from(arr);
+            console.log(newArr);
+
+
+         // 拼接
+         var arr2 = [10,20,30];
+         var arr3 = [40,50,60];
+         var newArr = arr2.concat(arr3);
+         console.log(newArr); 
+        
+
+        // 一个数组内的所有元素是否都能通过某个条件的函数，返回true，false
+         var arr4 = [1000,2000,3000];
+         var flag = arr4.every(function (a,b) {
+
+                if (a >= 2000) {
+                    return a;
+                }
+
+         });
+         console.log(flag);
+
+
+        //  符合条件的元素组成的数组
+        var arra5 = [10,20,30,40,50,60,70,80];
+        var newArr1 = arra5.filter(function (ele) { //ele---每个元素
+            return ele > 40;
+        });
+        console.log(newArr1);
+
+        // 将一个或多个元素添加到数组的末尾
+        var animals = ['pigs', 'goats', 'sheep'];
+        console.log(animals.push('cows') + "------" + animals);
+
+        // 删除最后一个元素
+
+        console.log(animals.pop('goats') + "------" + animals);
+
+        // 从数组中删除第一个元素
+        var array1 = [1, 2, 3];
+        var firstElement = array1.shift();
+        console.log(array1 + "=====" + firstElement);
+
+         // 将一个或多个元素添加到数组的开头
+         var array2 = [10,20,30,40,50];;
+         var result = array2.unshift(100);
+        console.log(array2 + "=====" + result);
+
+
+        // 对数组的每个元素执行一次提供的函数
+        var array3 = [10, 20, 30, 40];
+        array3.forEach(function (ele,index) {
+            console.log(ele+'======'+index);
+        });
+
+        // 在数组中找到一个给定元素的第一个索引，如果不存在，则返回-1
+        var array4= [10,20,30,40];
+        var index = array4.indexOf(300);
+        console.log("--------" + index);
+
+        // 将一个数组的所有元素连接成一个字符串并返回这个字符串
+        var array5 = ["小白","小黑","小红","小芳","小绿","小苏"];
+        var str = array5.join("|");
+        console.log(str);
+
+        // 创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。
+        var array6 = [1,4,9];
+        var roots = array6.map(Math.sqrt);
+        console.log(roots);
+
+        // 数组反转
+        var array7=[10,20,30,40,50];
+         console.log(array7.reverse());
+
+        //  对数组的元素进行排序，并返回数组
+        //  a---arr[j]
+        //  b---arr[j+1]
+           var array8=[1,40,20,10,100];
+           array8.sort(function (a,b) {
+                if(a>b){
+                return 1;
+                }else if(a==b){
+                return 0;
+                }else{
+                return -1;
+                }
+            });
+            console.log(array8);
+
+        // 数组元素截取
+         var animalArray = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+         console.log(animalArray.slice(2));
+         console.log(animalArray.slice(2, 4));
+
+
+        //通过删除或替换现有元素或者原地添加新的元素来修改数组
+        var months = ['Jan', 'March', 'April', 'June'];
+            months.splice(1, 0, 'Feb');
+            console.log(months);
+
+            months.splice(4, 1, 'May');
+            console.log(months);
+            
+    </script>
+    
+</body>
+</html>
+

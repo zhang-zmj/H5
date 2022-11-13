@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的书写位置</title>
+
+
+    <!-- 外联式 -->
+    <script src="1、输出语句.js"></script>
+
+</head>
+<body>
+
+    <!-- 
+        JavaScript注意：
+           1、在一对script的标签中，与错误的js代码，那么该错误的代码后面的js代码不会执行
+           2、如果第一对的script标签中有错误，不会影响后面的script标签中的js代码执行
+           3、script的标签中可以写什么内容,type="text/javascript"是标准写法或者写
+              language="Javascript"都可以
+           4、但是，目前我们的html页面中，type和language都可以省略，原因是html是遵循h5标准的
+           5、有可能会出现这种情况：script标签中可能同时出现type和language写法
+     -->
+
+
+    <!--内嵌式-->
+    <script type="text/javascript">
+       alert("张明军");
+    </script>
+
+
+
+</body>
+</html>
+
+

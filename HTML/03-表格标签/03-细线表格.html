@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>细线表格</title>
+  </head>
+  <body>
+    <!--  
+          1、表格标签中通过cellspacing设置为0实现细线是不靠谱的，其实是两个线合并为一条线
+          2、细线表格的设置方式：
+           2.1、设置背景色
+           2.2、cellspacing="1px" 
+    -->
+    <table bgcolor="black" cellspacing="1px" width="200px" height="200px">
+      <tr bgcolor="white">
+        <td bgcolor="red">1.1</td>
+        <td>1.2</td>
+      </tr>
+      <tr bgcolor="white">
+        <td>2.1</td>
+        <td>2.2</td>
+      </tr>
+    </table>
+  </body>
+</html>

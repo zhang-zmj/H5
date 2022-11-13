@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>序选择器上</title>
+
+    <!-- 
+        序选择器：
+            1、first/last-child：同级别的第一个标签，不区分类型
+              only-child： 同级别的只有一个才被选中
+            2、first/last-of-type： 同级别同类型的标签
+              only-of-type： 同级别的只有一个才被选中
+     -->
+    <style>
+      /*
+        p:first-child{
+            color: red;
+        }
+        
+        p:first-of-type{
+            color: blue;
+        }
+
+        p:last-child{
+            color: green;
+        }
+
+        p:last-of-type{
+            color: purple;
+        }
+    */
+
+      /* 
+        p:nth-child(3){
+          color: red;
+         } 
+
+        p:nth-of-type(3){
+         color: yellow;
+        }
+    */
+
+      /*
+           p:nth-last-child(1){
+              color: red;
+            } 
+       
+            p:nth-last-of-type(1){
+                color: green;
+            }
+        */
+
+      /* p:only-child{  //仅有一个的元素的那个
+        color: purple;
+    } */
+
+      p:only-child {
+        color: green;
+      }
+
+      /*
+      .para:only-of-type {  //只有一个的才能被选中
+            color: red;
+      } 
+
+      p:only-of-type {
+            color: red;
+      }
+    */
+    </style>
+  </head>
+  <body>
+    <!-- 
+
+    <h1>我是标题</h1>
+    <p>我是段落1</p>
+    <p>我是段落2</p>
+    <p>我是段落3</p>
+    <p>我是段落4</p>
+    <div>
+        <p>我是段落5</p>
+        <p>我是段落6</p>
+        <p>我是段落7</p>
+        <p>我是段落8</p>
+    </div>
+
+     -->
+
+    <!-- <p class="para">我是段落1</p> -->
+    <div>
+      <p class="para">我是段落2</p>
+      <!-- <p class="para">我是段落2</p>
+         <h1>我是标题</h1> -->
+    </div>
+  </body>
+</html>

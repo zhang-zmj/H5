@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作符</title>
+
+
+</head>
+<body>
+
+<script>
+    /*
+     操作符:一些符号-----用来计算
+        1、算术运算符： 加号(+)  减号(-) 乘号(*)  除号(/) 余号(%) 递增(++)  递减(--)   NaN(判断是不是个数字类型)
+        2、关系运算符?：小于号(<) 大于号(>) 小于等于号(<=) 大于等于号(>=) 等于号(==) 不等号(!=)  严格(===) 严格(!==)判断类型和值
+        3、逻辑运算符 and &&,  or ||,  !
+        4、赋值运算符： =、+=、 -=、*=、/=、%=
+        5、逗号运算符：  表达式1, 表达式2, 表达式3, ....;
+              逗号运算符的运算符结果就是最后一个表达式的结果
+        6、三目运算符
+            条件表达式 ? 结果A : 结果B;
+     */
+
+    //  var age = 16;
+    //  if (age < 18) {
+    //     document.write("Too young")
+    //   }
+    //   alert("你好！..")
+
+
+    //   var n1 = "中国人"
+    //   var n2 = 6666;
+    //   var n3 = n1 + n2;
+    //   alert(n3);
+    //   alert(typeof n3)
+
+
+   //如果今天是周6，1000天之后是周几？
+    // var day1 = 6;
+    // var day2 = 1000;
+    // var day3 = day1 + day2;
+    // alert(day3%7);
+    
+    
+
+   //赋值
+    // var num1 = 2;
+    // var num2 = 3;
+    // var num3 = num1 + num2;
+    //      alert(num3);
+
+
+    /*
+        自加自减：
+            1、不参与运算，自身加1
+            2、++/-- 在后面，先参与运算，后自身加减
+            3、++/-- 在前面，先自身加减,然后再参与运算
+    */ 
+//    var num=10; 
+//     //    num++;
+//        ++num;
+//        console.log(num);
+
+
+//    var num=10;
+//    var sum=num++ +10;
+// //    var sum=++num +10;
+//    console.log(sum);//20
+
+
+
+    /*
+        逗号运算符：
+    */
+    // 利用逗号运算符同时定义多个变量
+    // let a, b;
+    // 利用逗号运算符同时给多个变量赋值
+    //  a = 10, b = 5;
+    //  let res = ((1 + 1), (2 + 2), (3 + 3));
+    //  console.log(res);
+
+
+    /*
+        三目运算符：
+    */
+ // let res = true ? 123 : 456;
+ // let res = false ? 123 : 456;
+    let res = (10 > 5) ? 10 : 5;
+    console.log(res);
+
+
+</script>
+
+    
+</body>
+</html>
+
+
+

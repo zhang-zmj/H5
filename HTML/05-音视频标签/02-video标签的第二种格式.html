@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>video标签的第二种格式</title>
+</head>
+<body>
+
+<!--
+  由于视频数据非常非常的重要, 所以五大浏览器厂商都不愿意支持别人的视频格式, 所以导致了没有一种视频格式是所有浏览器都支持的
+  1.格式:
+    <video>
+        <source src="" type="">
+        <source src="" type="">
+    </video>
+-->
+
+<video autoplay="autoplay" controls="controls">
+  <source src="images/sb1.webm" type="video/webm"></source>
+  <source src="images/sb1.mp4" type="video/mp4"></source>
+  <source src="images/sb1.ogg" type="video/ogg"></source>
+</video>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date对象</title>
+
+        <script src="8、Transformation.js"></script>
+
+</head>
+<body>
+
+    <script>
+    
+        // new 创建Date实例化对象   不加new则会返回一个字符串,而非 Date 对象
+        var  date = new Date()  //当前系统时间
+            console.log(date);
+        var  dateStr = new Date("2017-08-12");
+             dateStr = new Date("2017/08/12");
+            console.log(dateStr);
+        var birthday = new Date(1995, 11, 17, 3, 24, 0);
+            console.log(birthday);
+
+        var nowDate = Date.now();   //或得当前的时间戳
+            console.log(nowDate);
+
+
+        // Date对象方法
+            var dataObj = new Date();
+                console.log(dataObj.getFullYear());            //年
+                console.log(dataObj.getMonth());               //月 从 0（1月）到 11（12月）。
+                console.log(dataObj.getDate());                //日
+                console.log(dataObj.getHours());               //小时
+                console.log(dataObj.getMinutes());             //分钟
+                console.log(dataObj.getSeconds());             //秒
+                console.log(dataObj.getDay());                 //星期---从0开始
+
+                console.log(dataObj.toDateString());          //英文的---日期
+                console.log(dataObj.toLocaleDateString());    //数字格式--日期
+                console.log(dataObj.toTimeString());          //小时分钟秒
+                console.log(dataObj.valueOf());               //毫秒值
+
+                console.log(dataObj.toString());              //转成字符串
+               
+
+                
+      
+        console.log(setDateFormate(new Date()));
+        console.log(timeStampToTime("1560687151724"));
+        
+    
+    </script>
+
+</body>
+</html>
+

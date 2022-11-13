@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数介绍和定义</title>
+</head>
+<body>
+
+    <!--
+        函数:可以重复执行的代码块
+        函数的作用:代码的重用
+        声明：
+            function 函数名 (参数1, 参数2, 参数3)  {  程序   }
+        特点：
+         如果函数名相同，后面的函数会覆盖前面的函数。（函数名，不能一样）
+    -->
+    <script>
+     
+     //无参函数 getSum：是函数名
+     function getSum() {
+         var sum = 0;
+         for (var i = 0; i <= 100; i++) {
+             sum += i;
+         }
+         alert(sum);
+     }
+      getSum(); //函数调用
+
+
+    /*
+    *  参数问题:
+    *  1、相等的话，正常执行。
+    *  2、实参大于形参，正常执行。（多余的实参，函数不使用）
+    *  3、实参小于形参，要看你的程序是否报错。（报错，NaN，undefined）
+    *  4、未给定实参的形参为undefined;
+    */
+    function param(a, b, c) {
+        console.log(a+b);
+    }
+
+
+    var num1 = parseInt(prompt("输入第一个数字"));
+    var num2 = parseInt(prompt("输入第二个数字"));
+    param(num1,num2);
+    param(1,1,1);
+    param();
+
+
+
+    //返回值
+    function returnValue(x,y) {
+        var sum = x + y;
+        return sum;  //必须用return，不用则返回值都是undefined
+    }
+    var value = returnValue(10,20);
+    alert(value);
+
+
+    //调用函数时实参的个数和形参的个数可以不相同
+    function getSum(a, b) {
+        console.log(a, b);
+        return a + b;
+    }
+    let res = getSum(10, 20, 30);
+    console.log("这个数的结果" + res);
+
+
+    // 6.JavaScript中的函数和数组一样, 都是引用数据类型(对象类型)
+    // 将来可以通过变量名称找到函数并执行函数
+    let say = function () {
+        console.log("hello world");
+    }
+    say();
+
+    
+    </script>
+
+
+</body>
+</html>
+
+

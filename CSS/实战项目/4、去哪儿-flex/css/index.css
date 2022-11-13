@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background: #eee;
+}
+body{
+    /*
+    min-width: 设置当前元素最小的宽度
+    max-width: 设置当前元素最大的宽度
+    */
+    min-width: 120px;
+    max-width: 750px;
+    height: 1000px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.header>img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+
+.main{
+    color: #fff;
+}
+
+.main>.section{
+    display: flex;
+    height: 100px;
+    margin: 4px 2px 4px 2px;
+    background: skyblue;
+}
+
+.main>.section>.col{
+    flex: 1;
+    border-left: 1px solid #fff;
+    box-sizing: border-box;
+    text-align: center;
+    background: #ff5555;
+}
+
+.main>.section:nth-child(2)>.col{
+    background: #00a7f7;
+}
+.main>.section:nth-child(3)>.col{
+    background: #7cb832;
+}
+.main>.section:nth-child(4)>.col{
+    background: #ff9900;
+}
+
+.main>.section>.col:nth-child(1){
+    border-left: none;
+}
+
+.section>.col>p{
+    margin: 15px 0;
+}
+
+.main>.section>.col>img{
+    width: 42px;
+    height: 46px;
+}
+
+.main>.section>.col>div{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+.main>.section:last-child{
+    height: 50px;
+    line-height: 50px;
+}  
+
+
+.main>.section>.col>div:last-child{
+    border-bottom: none;
+}
+
+
+
+.nav{
+    background: #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li{
+    flex: 1;
+    height: 70px;
+    text-align: center;
+    background: white;
+}
+
+.nav ul li i{
+    margin-top: 10px;
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    background: url("../images/icons.png") no-repeat;
+    background-position: -35px -12px;
+}
+
+.nav ul li p{
+    color: #666;
+    font-size: 12px;
+}
+
+
+
+
+.guide{
+    display: flex;
+    height: 80px;
+    background: white;
+}
+
+.guide div{
+    flex: 1;
+    text-align: center;
+    background: white;
+}
+
+.guide div i{
+    margin-top: 10px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #666;
+    border-radius: 50%;
+}
+
+.guide div:nth-child(1)>i{
+font-size: 30px;
+}
+.guide div:nth-child(2)>i{
+    font-size: 20px;
+}
+.guide div:nth-child(3)>i{
+    font-size: 25px;
+}
+
+.guide div p{
+    color: #666;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+.footer{
+    height: 50px;
+    background: #ccc;
+    width: 100%;
+}
+
+.footer{
+    float: left;
+    line-height: 50px;
+}
+
+.footer p {
+    display: inline-block;
+    color: #666;
+}
+
+.footer p a{
+    text-decoration: none;
+    color: #333;
+}
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位练习2</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 500px;
+            height: 280px;
+            border: 2px solid gold;
+            margin: 0 auto;
+            margin-top: 100px;
+            position: relative;
+        }
+
+        div img {
+            width: 500px;
+            height: 280px;
+        }
+
+        div span{
+            width: 40px;
+            background: rgb(0, 0, 0, 0.3);
+            line-height: 40px;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+            padding-bottom: 10px;
+        }
+    
+        div .leftArrow {
+            position: absolute;
+            left: 0px;
+            top: 112px;
+        }   
+
+        div .rightArrow {
+            position: absolute;
+            right: 0px;
+            top: 112px;
+        }  
+
+         ol{
+            position: absolute;
+            list-style: none;
+            width: 200px;
+            height: 20px;
+            background-color: rgb(255, 255, 255, 0.7);
+            right: 10px;
+            bottom: 10px;
+        }   
+        
+        ol li{
+            float: left;
+            width: 40px;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid  purple;
+            box-sizing: border-box;
+        }
+    
+    </style>
+
+</head>
+<body>
+
+    <div>
+
+        <img src="../../../images/ad.jpg" alt="">
+        <span class="leftArrow">&lt;</span>
+        <span class="rightArrow">&gt;</span>
+        <ol>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+
+    </div>
+
+    
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>53-盒子居中和内容居中</title>
+    <style>
+      .father {
+        width: 300px;
+        height: 200px;
+        background-color: red;
+        /* text-align: center; */
+        margin: 0 auto;
+      }
+      .son {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      1、如果两个盒子是嵌套关系,那么设置了里面一个盒子的顶部的外边距
+        外面一个盒子也会被顶下来
+
+      2、如果外面的盒子不想被一起顶下来，可以给外面的盒子添加一个边框属性
+
+      3、一般情况下如果需要控制嵌套关系盒子之间的距离，应该首先考虑padding，
+        其次再考虑margin
+
+      3、text-align:center;和margin:0 auto;区别
+        text-align: center;作用设置盒子中存储的文字/图片水平居中
+        margin:0 auto;作用让盒子自己水平居中
+    -->
+    <div class="father">
+      我是文字<br />
+      <img src="../images/girl.jpg" alt="" />
+      <!--<div class="son"></div>-->
+    </div>
+  </body>
+</html>

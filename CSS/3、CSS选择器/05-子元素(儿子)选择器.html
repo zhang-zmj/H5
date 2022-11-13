@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>子元素选择器</title>
+
+    <!-- 
+        1、找到指定标签中所有特定的直接子元素，然后设置属性
+        2、子元素选择器只会查找儿子，不会查找其他被嵌套的标签
+    -->
+    <style>
+      /*
+        div>p {
+            color: red;
+        }
+        */
+
+      /*
+        #identity>p{
+            color: blue;
+        }
+        */
+
+      div > ul > li > p {
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <p>我是段落</p>
+    <div id="identity">
+      <p>我是段落</p>
+      <p>我是段落</p>
+      <ul>
+        <li><p>我是段落</p></li>
+      </ul>
+    </div>
+    <p>我是段落</p>
+  </body>
+</html>

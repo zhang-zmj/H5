@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>序选择器下</title>
+
+    <!-- 
+        [attribute^=value]
+        [attribute$=value]
+        [attribute*=value]
+     -->
+    <style>
+      /* 以什么开头 */
+      img[alt^="abc"] {
+        color: red;
+      }
+
+      /* 以什么结尾 */
+      img[alt$="abc"] {
+        color: blue;
+      }
+
+      /* 包含什么的 */
+      img[alt*="y"] {
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="" alt="abcdef" />
+    <img src="" alt="abc-www" />
+    <img src="" alt="abc ppp" />
+    <img src="" alt="defabc" />
+    <img src="" alt="ppp abc" />
+    <img src="" alt="www-abc" />
+    <img src="" alt="qqy" />
+    <img src="" alt="yy" />
+    <img src="" alt="yhhay" />
+    <img src="" alt="ynihaoy" />
+  </body>
+</html>

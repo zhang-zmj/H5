@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>浮动元素的脱标</title>
+    <style>
+      .box1 {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .box2 {
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        1、什么是浮动元素的脱标?
+        脱标: 脱离标准流
+            当某一个元素浮动之后, 那么这个元素看上去就像被从标准流中删除了一样, 这个就是浮动元素的脱标
+
+        2、浮动元素脱标之后会有什么影响?
+            如果前面一个元素浮动了, 而后面一个元素没有浮动 , 那么这个时候前面一个元就会盖住后面一个元素
+
+        3、注意点：
+            * 浮动流没有居中对齐，也就是没有center这个取值
+            * 在浮动流当中不可以使用margin: 0 auto, 无效
+
+        特点：
+            * 在浮动流中是不区分块级/行内/行内块级元素，都可以水平排版
+            * 在浮动流中是不区分块级/行内/行内块级元素都可以设置宽高
+            
+        浮动流中的元素和标准流中的行内块级元素很像
+    -->
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>文本表单标签</title>
+  </head>
+  <body>
+    <form>
+      <!-- 明文输入框 -->
+      账号：<input type="text" /> <br />
+      <!-- 密文输入框 -->
+      密码：<input type="password" /> <br />
+
+      <!-- 给你输入框设置默认值 -->
+      账号：<input type="text" value="请输入账号" /> <br />
+      密码：<input type="password" value="请输入密码" /> <br />
+
+      <!-- 
+                单选框注意点：
+                    1、单选框默认不会互斥，要想单选则设置相同的name属性值
+                    2、默认选中单选框，那么可以给input标签添加一个checked属性
+                    3、在HTML中如果属性的取值和属性的名称一样, 可以只写一个. 但是在XHTML中必须写上取值, 所以在企业开发中我们推荐大家不要省略取值
+            -->
+      性别:
+      <input type="radio" name="xx" checked />男
+      <input type="radio" name="xx" />女
+      <input type="radio" name="xx" />保密<br />
+
+      <!--多选框-->
+      爱好:
+      <input type="checkbox" />篮球 <input type="checkbox" />足球
+      <input type="checkbox" checked="checked" />棒球
+      <input type="checkbox" checked="checked" />足浴
+    </form>
+  </body>
+</html>

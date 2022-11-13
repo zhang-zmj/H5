@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For循环</title>
+
+    <!-- 
+        1.for循环的格式
+            for(初始化表达式;条件表达式;循环后增量表达式){
+                需要重复执行的代码;
+            }
+     -->
+
+</head>
+<body>
+    
+    <script>
+    //打印1-10的数字
+    //  for (var n1 = 1; n1 <= 10; n1++) {
+    //     console.log(n1);
+    //  }
+    
+    // 在界面中打印出两行10颗 *
+    // for (var i = 0; i < 2; i++) {
+    //     for (var j = 0; j < 10; j++) {
+    //         document.write("*");
+    //     }
+    //     document.write("<br>");
+    // }
+
+
+    // 在界面中打印一个直角三角形
+    // for (var i = 0; i < 9; i++) {
+    //         for (var j = 0; j <= i; j++) {
+    //             document.write("*");
+    //         }
+    //         document.write("<br>");
+    //     }
+
+    // 打印九九乘法表
+    // for (var i = 1; i <= 9;i++){
+    //     for (var j = 1; j <= i; j++){
+    //         document.write(j+"X"+i+"="+j*i+"&nbsp;");
+    //     }
+    //         document.write("<br>");
+    // }
+
+    document.write("<table border='1' cellpadding='0' cellspacing='0'>");
+    for (var i = 1; i <= 9; i++) {
+       document.write("<tr>");
+       for (var j = 0; j < i; j++) {
+        document.write("<td>");  
+        document.write(i+"*"+j+"="+i*j);
+         document.write("</td>"); 
+       }
+        document.write("</tr>");
+    }
+    
+
+
+    
+
+    // break（跳出当前循环）的练习 ---  输出找到1-100之间的所有质数
+    // var flag = 0;
+    //  for (var i = 1; i <= 100; i++) {
+    //      for (var j = 2; j < i; j++) {
+    //         if (i % j == 0) {
+    //             flag = 1;
+    //             break;
+    //         }else{
+    //             flag = 0;
+    //         }
+    //      }
+    //      if (flag == 0 && i != 1) {
+    //          console.log(i);
+    //      } 
+    //  }
+
+
+     //将6以外的1-10数字打印到控制台
+    //  for (var m1 = 1; m1 <= 10; m1++) {
+    //       if (m1 == 6) {
+    //           continue;
+    //       }else{
+    //           console.log(m1);
+    //       }
+    //  }
+    
+    
+
+
+    for(var i = 0; i < 3; i++){ // 0 1 2 3
+        (function test() {
+            console.log(i); // 0 1 2
+        })();
+    }
+    
+
+    for(var i = 0; i < 3; i++){ // 0 1 2 3
+        // function test(index) { // var index = i;
+        //     console.log(index); // 0 1 2
+        // }
+        // test(i);
+        (function test(index) {
+            console.log(index); // 0 1 2
+        })(i);
+    }
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+

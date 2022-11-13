@@ -1,0 +1,49 @@
+<!--
+1.字体图标
+    本质是文字(体积小), 虽然字体图标的本质是文字, 但是也可以做出和图片一样的效果
+    并且可以随意修改颜色、大小、透明度等(扩展性强)
+2.常用字体图标库
+    https://www.iconfont.cn/
+3.字体图片的使用
+    * 设计师提供SVG格式图标
+    * 上传到对应字体图标网站
+    * 添加到项目
+
+- 找到下载好的对应的文件, 将所有的iconfont开头的文件放到项目的font文件夹下面
+- 新建一个CSS文件, 将demo_index.html对应的代码拷贝进去
+- 注意点: 拷贝代码之后需要将@font-face中的资源路径改为拷贝资源对应的路径
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>字体图标的基本使用</title>
+    <!--<link rel="stylesheet" href="css/index.css">-->
+    <!--<link rel="stylesheet" href="font/iconfont.css">-->
+    <script src="font/iconfont.js"></script>
+    <style>
+      .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+<div class="iconfont">&#xf0178;</div>
+<p class="iconfont">&#xe634;</p>
+<span class="iconfont">&#xf030d;</span>
+-->
+    <!--
+<div class="iconfont icon-gouwucheman"></div>
+<p class="iconfont icon-luotuo"></p>
+<span class="iconfont icon-aixin1"></span>
+-->
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-aixin"></use>
+    </svg>
+  </body>
+</html>

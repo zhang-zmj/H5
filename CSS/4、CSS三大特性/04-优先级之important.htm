@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优先级之important</title>
+
+    <!-- 只能用于 直接选中，作用于标签。 -->
+    <style>
+    
+        #identity{
+            color: purple;
+            font-size: 50px;
+        }
+        .para{
+            color: pink ;
+        }
+        p{
+            color: green;
+        }
+        *{
+            color: blue !important;
+            font-size:10px;
+        }
+        li{
+            color: red ;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <ul>
+        <li>
+            <p id="identity" class="para">我是段落</p>
+        </li>
+    </ul>
+
+</body>
+</html>
+
+

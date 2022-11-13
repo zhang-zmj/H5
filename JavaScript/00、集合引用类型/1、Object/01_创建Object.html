@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>创建Object</title>
+  </head>
+  <body>
+    <script>
+      // 1、new 操作符创建Object
+      let person1 = new Object();
+      person1.name = "Nicholas";
+      person1.age = 29;
+      console.log(person1);
+
+      // 2、构造函数创建Object，只能接受一个参数
+      let person2 = new Object("zhang");
+      console.log(person2);
+
+      // 3、字面量创建Object , 数值会自动转换为字符串
+      let person3 = {
+        name: "zhangmj",
+        age: 19,
+        5: true,
+      };
+      console.log(person3);
+
+      // 4、花括号创建
+      let person4 = {};
+      person4.name = "hello world";
+      person4.age = 11;
+      console.log(person4);
+
+      // 5、函数创建
+      function displayInfo(args) {
+        let output = "";
+        if (typeof args.name == "string") {
+          output += "Name：" + args.name + "\n";
+        }
+
+        if (typeof args.age == "number") {
+          output += "Age" + args.age + "\n";
+        }
+        alert(output);
+      }
+
+      displayInfo({
+        name: "zmj",
+        age: 19,
+      });
+
+      displayInfo({
+        name: "zhang",
+      });
+    </script>
+  </body>
+</html>

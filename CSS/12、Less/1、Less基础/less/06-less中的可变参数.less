@@ -1,0 +1,42 @@
+// 2、第二种
+// .animate(@name, @time, @mode, @delay) {
+//   transition: name time mode delay;
+// }
+
+// 3、第三种
+// .animate(...) {
+//   transition: @arguments;
+// }
+
+// .animate(@name, ...){
+//transition: @name @time @mode @delay;
+//   transition: @arguments;
+// }
+
+// 3、第四种
+.animate(@name, ...) {
+  //transition: @name @time @mode @delay;
+  transition: @arguments;
+}
+
+// 4、第五种：...表示可以接收0个或多个参数  如果形参列表中使用了..., 那么...必须写在形参列表最后
+.animate(@name, @time, ...) {
+  //transition: @name @time @mode @delay;
+  transition: @arguments;
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  background: red;
+
+  // 1、第一种：
+  // transition: all 4s linear 0s;
+  .animate(all, 4s, linear, 0s);
+}
+
+div:hover {
+  width: 400px;
+  height: 400px;
+  background: blue;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>创建数组</title>
+  </head>
+  <body>
+    <script>
+      // 1、字面量
+      let array1 = [1, 2, 3];
+      let array2 = [];
+      console.log(array1, array2);
+
+      // 2、构造函数
+      let array3 = new Array();
+      let array4 = new Array("关羽", "张飞", "刘备");
+      // 当构造函数中只有一个数字时，创建长度指定数值的数组
+      let array5 = new Array("zhang");
+      let array6 = new Array(3);
+      console.log(array3, array4, array5, array6);
+
+      // 3、Array.of()创建
+      let array7 = Array.of(1, 2, 3, 4);
+      let array8 = Array.of(undefined);
+      console.log(array7, array8);
+
+      // 4、Array.from()创建
+      // 将字符串拆分为单字符数组
+      let array9 = Array.of("Matt");
+      // 将集合和映射转为一个新数组
+      const m = new Map().set(1, 2).set(3, 4);
+      const s = new Set().add(1).add(2).add(3).add(4);
+      let array10 = Array.from(m);
+      let array11 = Array.from(s);
+      console.log(array9, array10, array11);
+      // 对现有数组进行浅复制
+      const a1 = [1, 2, 3, 4];
+      const a2 = Array.from(a1);
+      console.log(a1 === a2);
+      // arguments对象可以被轻松地转为数组
+      function getArgsArray() {
+        return Array.from(arguments);
+      }
+      console.log(getArgsArray(1, 2, 3, 4, 5));
+      // 也能转换有必要属性的自定义对象
+      const arrayLikeObject = {
+        0: 1,
+        1: 2,
+        2: 3,
+        3: 4,
+        length: 4,
+      };
+      console.log(Array.from(arrayLikeObject));
+    </script>
+  </body>
+</html>
