@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDN引入</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script>
+      //1、第一种创建方式：
+      /*
+        const app1 = Vue.createApp({
+          template: `<h2>Hello World，我来了！！</h2>`
+        })
+        app1.mount('#app')
+      */
+
+      //2、第二种创建方式：
+      const zmj = {
+        template: '<h2>Hello World，zhangmj</h2>'
+      }
+      const app = Vue.createApp(zmj)
+      app.mount('#app')
+      
+    </script>
+  </body>
+</html>

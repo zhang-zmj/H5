@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="my-app">
+      <div>
+        <h2>电影列表</h2>
+        <ul>
+          <li v-for="(movie, index) in movies">{{index+1}}.{{movie}}</li>
+        </ul>
+        <input type="text" v-model="newMovie" />
+        <button @click="addMovie">添加电影</button>
+      </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const App = {
+        template: '#my-app',
+        data() {
+          return {
+            newMovie: '',
+            movies: ['星际穿越', '盗梦空间', '大话西游', '教父', '少年派']
+          }
+        },
+        methods: {
+          addMovie() {
+            this.movies.push(this.newMovie)
+            this.newMovie = ''
+          }
+        }
+      }
+      Vue.createApp(App).mount('#app')
+    </script>
+  </body>
+</html>
+
+<!-- 
+
+数组更新检测：
+  Vue 将被侦听的数组的变更方法进行了包裹，所以它们也将会触发视图更新。
+   push()：向数组的末尾添加一个或多个元素，并返回新的长度
+   pop()： 删除数组的最后一个元素并返回删除的元素
+   shift()：  用于把数组的第一个元素从其中删除，并返回第一个元素的值
+   unshift()：向数组的开头添加一个或更多元素，并返回新的长度
+   splice()： 用于添加或删除数组中的元素
+   sort()： 用于对数组的元素进行排序。
+   reverse()：用于颠倒数组中元素的顺序
+
+替换数组的方法
+ 上面的方法会直接修改原来的数组；
+ 但是某些方法不会替换原来的数组，而是会生成新的数组，比如 filter()、concat() 和 slice()；
+
+ -->

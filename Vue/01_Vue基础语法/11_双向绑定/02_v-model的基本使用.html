@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <label for="account"> 账号： <input id="account" type="text" v-model="account" /> </label>
+
+      <label for="password"> 密码： <input id="password" type="password" v-model="password" /> </label>
+
+      <button @click="loginClick">登录</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            account: '',
+            password: ''
+          }
+        },
+        methods: {
+          loginClick() {
+            const account = this.account
+            const password = this.password
+            console.log(account + '------' + password)
+          }
+        }
+      }
+      Vue.createApp(App).mount('#app')
+    </script>
+  </body>
+</html>
