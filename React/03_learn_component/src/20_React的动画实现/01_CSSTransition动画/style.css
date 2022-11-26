@@ -1,0 +1,30 @@
+/* 进入动画 */
+/* .zmj-appear {
+  transform: translateX(-150px);
+}
+
+.zmj-appear-active {
+  transform: translateX(0);
+  transition: transform 2s ease;
+} */
+
+.zmj-appear,
+.zmj-enter {
+  opacity: 0;
+}
+
+.zmj-appear-active,
+.zmj-enter-active {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+/* 离开动画 */
+.zmj-exit {
+  opacity: 1;
+}
+
+.zmj-exit-active {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
