@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>时间格式化的方法</title>
+  </head>
+  <body>
+    <script>
+
+      function formatDate(time,fmt) {
+        let date = new Date(time);
+        if (/(y+)/.test(fmt)) {
+             fmt = fmt.replace(RegExp.$1,(date.getFullYear() + '').substr(4 - RegExp.$1.length));
+        }
+        let o = {
+          'M+': date.getMonth()+1,
+          'd+': date.getDate(),
+          'h+': date.getHours(),
+          'm+': date.getMinutes(),
+          's+': date.getSeconds()
+        };
+        for (let k in o){
+          if (new RegExp(`(${k})`).test(fmt)){
+              let str = o[k]+ '';
+              fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : padLeftZero(str));
+          }
+        }
+            return fmt;
+      };
+
+      function padLeftZero(str) {
+        return ('00' + str).substr(str.length)
+      }
+      
+    </script>
+  </body>
+</html

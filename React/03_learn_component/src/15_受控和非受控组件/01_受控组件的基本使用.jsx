@@ -17,7 +17,7 @@ export default class App extends PureComponent {
     const { username } = this.state
     return (
       <div>
-        {/* 受控组件 */}
+        {/* 受控组件：绑定value */}
         <input type="checkbox" value={username} onChange={e => this.inputChange(e)} />
 
         <hr />

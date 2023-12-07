@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+      1、认识进制及它们之间的转换：
+        二进制
+        八进制
+        十进制
+        十六进制
+      2、颜色的表示方法
+        1、颜色关键字  https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value#%E8%AF%AD%E6%B3%95
+        2、RGB颜色
+          ①、十六进制符号：#RRGGBB[AA] 或  #RGB[A]
+            R（红）、G（绿）、B （蓝）和A （alpha）是十六进制字符（0–9、A–F）；A是可选的
+
+          ②、函数符： rgb[a](R, G, B, [A])
+            R（红）、G（绿）、B （蓝）可以是<number>（数字），或者<percentage>（百分比），255相当于100%
+            A（alpha）可以是0到1之间的数字，或者百分比，数字1相当于100%（完全不透明）。
+    -->
+
+    <style>
+      .box {
+        /* 1、颜色关键字 */
+        color: red;
+
+        /* 2-1-1、黑色是最纯洁的颜色 */
+        background-color: rgb(100, 100, 100);
+        background-color: #646464;
+
+        /* 2-1-1、表示一个纯黑色 */
+        background-color: rgb(0, 0, 0);
+        background-color: #000;
+
+        /* 2-2、表示一个纯白色 */
+        background-color: rgb(255, 255, 255);
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">哈哈哈</div>
+  </body>
+</html>

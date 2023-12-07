@@ -12,6 +12,7 @@
     <template id="my-app">
       <div>
         <h2>{{info.name}}</h2>
+        <h2>{{friends[0].name}}</h2>
         <button @click="changeInfo">改变info</button>
         <button @click="changeInfoName">改变info.name</button>
         <button @click="changeInfoNbaName">改变info.nba.name</button>
@@ -32,14 +33,15 @@
         },
         watch: {
           // 这个不行
-          'friends[0].name': function (newName, oldName) {
-            console.log(newName, oldName)
-          }
-          // friends: {
-          //   handler(newFriends, oldFriend) {
-          //   },
-          //   deep: true
+          // 'friends[0].name': function (newName, oldName) {
+          //   console.log(newName, oldName)
           // }
+          friends: {
+            handler(newFriends, oldFriend) {
+              console.log('-----哈哈哈哈-----')
+            },
+            deep: true
+          }
         },
         methods: {
           changeInfo() {
@@ -56,6 +58,11 @@
           }
         },
         created() {
+          /*
+          1、第一个参数是要侦听的源；
+          2、第二个参数是侦听的回调函数callback；
+          3、第三个参数是额外的其他选项，比如deep、immediate；
+          */
           const unwatch = this.$watch(
             'info',
             function (newInfo, oldInfo) {

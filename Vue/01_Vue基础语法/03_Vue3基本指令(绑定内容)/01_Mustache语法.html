@@ -33,28 +33,27 @@
 
     <script>
       const App = {
-        template: "#my-app",
+        template: '#my-app',
         data() {
           return {
-            message: "Hello World",
+            message: 'Hello World',
             counter: 100,
-            isShow: true,
-          };
+            isShow: true
+          }
         },
         methods: {
           getReverseMessage() {
-            return this.message.split(" ").reverse().join(" ");
+            return this.message.split(' ').reverse().join(' ')
           },
           toggle() {
-            this.isShow = !this.isShow;
-          },
-        },
-      };
-      Vue.createApp(App).mount("#app");
+            this.isShow = !this.isShow
+          }
+        }
+      }
+      Vue.createApp(App).mount('#app')
     </script>
   </body>
 </html>
 
-
-
-
+<!-- 代码片段 -->
+<!-- https://snippet-generator.app-->

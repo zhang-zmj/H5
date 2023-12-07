@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>作用域</title>
+  </head>
+  <body>
+    <script>
+      /*
+        全局变量：
+            使用var声明，除了函数以外,其他的任何位置定义的变量都是全局变量
+        局部变量：
+            在函数内部定义的变量,是局部变量,外面不能使用
+            说明：js没有块级作用域,只有函数除外    
+        隐式全局变量：
+            声明的变量没有var,就叫隐式全局变量    
+            定义变量使用var是不会被删除的,没有var是可以删除的
+        定义变量有两种方式
+            var 变量名称;
+            let 变量名称;
+            区别：
+                * 是否能够先使用后定义 
+                    var 可以先使用后定义(预解析)   let 不可以先使用再定义(不会预解析)
+                * 无论是var还是let定义在{}外面都是全局变量
+                * 将var定义的变量放到一个单独的{}里面, 还是一个全局变量
+                * 将let定义的变量放到一个单独的{}里面, 是一个局部变量
+        作用域：
+            1.在JavaScript中{}外面的作用域, 我们称之为全局作用域
+            2.在JavaScript中函数后面{}中的的作用域, 我们称之为"局部作用域"
+            3.在ES6中只要{}没有和函数结合在一起, 那么应该"块级作用域"
+            4.块级作用域和局部作用域区别
+                4.1在块级作用域中通过var定义的变量是全局变量
+                4.2在局部作用域中通过var定义的变量是局部变量
+            5.无论是在块级作用域还是在局部作用域, 省略变量前面的let或者var就会变成一个全局变量
+    */
+
+      var number3 = 3456
+      function variableValue() {
+        //局部变量
+        var number1 = 111
+        //全局变量
+        number2 = 222
+        console.log(number3)
+      }
+      variableValue()
+      console.log(number2)
+      console.log(number3)
+
+      // /*
+      // *  隐式全局变量：
+      // */
+      // function implicitFunction(){
+      //     //b和c都是隐式全局变量
+      //     var a = b = c = 1;
+      //     //e和f都是隐式全局变量(分号相当于换行)
+      //     var d = 1;e =2;f=3;
+      //     //g和i都不是隐式全局变量
+      //     var g = 1,h= 2,i=3;
+      // }
+
+      // implicitFunction();
+      // console.log(b);
+      // console.log(c);
+      // console.log(e);
+      // console.log(f);
+
+      // 隐式变量的操作 delete 删除
+      // var num1=10;
+      // num2=20;
+      // delete num1;
+      // delete num2;
+      // console.log(typeof num1);
+      // console.log(num1+10);
+      // console.log(typeof num2);
+    </script>
+  </body>
+</html>

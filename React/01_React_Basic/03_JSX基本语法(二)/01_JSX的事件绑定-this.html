@@ -14,32 +14,6 @@
     <script src="../lib/babel.js"></script>
 
     <script type="text/babel">
-      /*
-        const obj = {
-          name: 'obj',
-          foo: function () {
-            console.log('foo:', this)
-          }
-        }
-
-          obj.foo()
-
-          const config = {
-            onClick: obj.foo.bind(obj)
-          }
-
-          const click = config.onClick
-          click()
-     */
-
-      /*
-       this的四种绑定规则：
-        1、默认绑定： 独立执行foo()
-        2、隐式绑定： 被一个对象执行 obj.foo() -> obj
-        3、显示绑定： call/apply/bind  foo.call("aaa") -> String
-        4、new绑定： new Foo() -> 创建一个新对象，并且赋值给this
-      */
-
       // 1.定义App根组件
       class App extends React.Component {
         constructor() {

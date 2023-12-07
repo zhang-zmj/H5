@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>元素class的用法</title>
+    <style>
+      .active {
+        color: #fff;
+        background-color: #f80;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">我是box</div>
+    <button class="btn">切换</button>
+
+    <script>
+      var boxEl = document.querySelector('.box')
+      // 1.方法一: className
+      // boxEl.className = "abc"
+
+      // 2.方法二: classList操作class
+      boxEl.classList.add('abc')
+      boxEl.classList.add('active')
+      boxEl.classList.remove('abc')
+
+      // 需求: box在active之间切换
+      var btnEl = document.querySelector('.btn')
+      btnEl.onclick = function () {
+        // if (boxEl.classList.contains("active")) {
+        //   boxEl.classList.remove("active")
+        // } else {
+        //   boxEl.classList.add("active")
+        // }
+        boxEl.classList.toggle('active')
+      }
+    </script>
+
+    <!-- 
+         elem.classList.add (class) ：添加一个类
+         elem.classList.remove(class)：添加/移除类。
+         elem.classList.toggle(class) ：如果类不存在就添加类，存在就移除它。
+         elem.classList.contains(class)：检查给定类，返回 true/false。
+     -->
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>元素的Attribute属性</title>
+  </head>
+  <body>
+    <!-- 
+   attribute的分类:
+      1.如果是HTML标准制定的attribute, 称之为标准Attribute
+      2.而自定义的Attribute, 称之为非标准Attribute
+ -->
+    <div id="abc" class="box" title="box" age="18" height="1.88">我是box</div>
+    <input type="checkbox" checked="checked" />
+    <script>
+      var boxEl = document.querySelector('.box')
+      // 1.所有的attribute都支持的操作 hasAttribute / getAttribute
+      console.log(boxEl.hasAttribute('AGE'))
+      console.log(boxEl.getAttribute('AGE'))
+
+      boxEl.setAttribute('id', 'cba')
+      boxEl.removeAttribute('id')
+
+      var boxAttributes = boxEl.attributes
+      for (const attr of boxAttributes) {
+        console.log(attr.name, attr.value)
+      }
+
+      // 2、通过getAttribute()一定是字符串类型
+      var inputEl = document.querySelector("input")
+      console.log(inputEl.getAttribute("checked"));
+    </script>
+  </body>
+</html>

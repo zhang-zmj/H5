@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>元素style的读取</title>
+    <style>
+      .box {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" style="background-color: red">我是box</div>
+
+    <script>
+      var boxEl = document.querySelector('.box')
+
+      // 对于内联样式，是可以通过style.*的方式读取到的
+      console.log(boxEl.style.backgroundColor)
+      // console.log(boxEl.style.fontSize)
+
+      // 对于style、css文件中的样式，是读取不到的；
+      // 这个时候，我们可以通过getComputedStyle的全局函数来实现
+      console.log(getComputedStyle(boxEl).fontSize)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手写bind函数的实现</title>
+  </head>
+  <body>
+    <script>
+      function foo(name, age, height, address) {
+        console.log(this, name, age, height, address)
+      }
+
+      // var newFoo = foo.bind({ name: 'zhangmj' }, 'zhangmj', 18)
+      // newFoo(1.88)
+
+      // 实现mjbind函数
+      Function.prototype.mjbind = function (thisArg, ...otherArgs) {
+        // console.log(this)  // -> foo函数对象
+
+        thisArg = thisArg === null || thisArg === undefined ? window : Object(thisArg)
+        Object.defineProperty(thisArg, 'fn', {
+          enumerable: false,
+          configurable: true,
+          writable: false,
+          value: this
+        })
+
+        return (...newArgs) => {
+          // var allArgs = otherArgs.concat(newArgs)
+          var allArgs = [...otherArgs, ...newArgs]
+          thisArg.fn(...allArgs)
+        }
+      }
+
+      var newFoo = foo.mjbind('abc', 'kobe', 30)
+      newFoo('1.88', '杭州市')
+    </script>
+  </body>
+</html>

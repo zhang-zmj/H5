@@ -33,6 +33,8 @@ class HelloWorld extends React.Component {
     console.log('HelloWorld componentDidMount')
   }
 
+  
+  
   // 在React更新DOM之前回调的一个函数，可以获取DOM更新前的一些信息(比如说滚动位置)
   getSnapshotBeforeUpdate() {
     console.log('getSnapshotBeforeUpdate')
@@ -58,3 +60,7 @@ class HelloWorld extends React.Component {
 }
 
 export default HelloWorld
+/*
+static getDerivedStateFromProps(props, state)
+  在调用 render 方法之前调用，并且在初始挂载及后续更新时都会被调用
+*/ 

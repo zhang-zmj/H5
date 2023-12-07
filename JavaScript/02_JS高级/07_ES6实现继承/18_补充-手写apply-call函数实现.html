@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手写apply-call函数实现</title>
+  </head>
+  <body>
+    <script>
+      function foo(name, age) {
+        console.log(this, name, age)
+      }
+
+      // 1、给函数对象添加方法：mjapply
+      Function.prototype.mjapply = function (thisArg, otherArgs) {
+        // this -> 调用的函数对象
+        // thisArg -> 传入的第一个参数, 要绑定的this
+        // console.log(this)
+        // console.log(thisArg)
+
+        // 1.获取thisArg, 并且确保是一个对象类型
+        thisArg = thisArg === null || thisArg === undefined ? window : Object(thisArg)
+
+        // thisArg.fn = this
+        Object.defineProperty(thisArg, 'fn', {
+          enumerable: false,
+          configurable: true,
+          value: this
+        })
+        thisArg.fn(...otherArgs)
+
+        delete thisArg.fn
+      }
+
+      foo.mjapply({ name: 'zhangmj' }, ['jams', 25])
+      foo.mjapply(123, ['zmj', 18])
+      foo.mjapply(null, ['kobe', 30])
+
+      // 2、给函数对象添加方法: mjcall
+      Function.prototype.hycall = function (thisArg, ...otherArgs) {
+        // 1.获取thisArg, 并且确保是一个对象类型
+        thisArg = thisArg === null || thisArg === undefined ? window : Object(thisArg)
+
+        // thisArg.fn = this
+        Object.defineProperty(thisArg, 'fn', {
+          enumerable: false,
+          configurable: true,
+          value: this
+        })
+        thisArg.fn(...otherArgs)
+
+        delete thisArg.fn
+      }
+
+      foo.hycall({ name: 'why', fn: 'abc' }, 'james', 25)
+      foo.hycall(123, 'why', 18)
+      foo.hycall(null, 'kobe', 30)
+    </script>
+  </body>
+</html>

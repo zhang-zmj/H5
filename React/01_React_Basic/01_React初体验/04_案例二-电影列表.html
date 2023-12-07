@@ -28,13 +28,15 @@
 
         render() {
           //1、对movies进行for循环
-          const liEls = []
+          const liEls1 = []
           for (let i = 0; i < this.state.movies.length; i++) {
             const movie = this.state.movies[i]
             const liEl = <li>{movie}</li>
-            liEls.push(liEl)
+            liEls1.push(liEl)
           }
 
+          // 2、第二种：ES6语法设置
+          const liEls2 = this.state.movies.map(movie => <li>{movie}</li>)
           return (
             <div>
               <h2>电影列表</h2>

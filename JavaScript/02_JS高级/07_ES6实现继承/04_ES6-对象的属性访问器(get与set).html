@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象访问器方法的编写</title>
+  </head>
+  <body>
+    <script>
+      //方式一： 描述符
+      var obj = {
+        _name: 'zhangmj'
+      }
+      Object.defineProperty(obj, 'name', {
+        configurable: true, // 表示能否通过delete删除此属性，初始值为fals
+        enumerable: true, // 表示该属性是否可枚举, 初始值为false
+        set: function () {}, // 给属性提供 getter 的方法, 默认为 undefined
+        get: function () {} // 给属性提供 setter 的方法, 默认为 undefined
+      })
+
+      // 方式二：直接在对象定义访问器
+      // 监听_name什么时候被访问, 什么设置新的值
+      var obj = {
+        _name: 'zhangmj',
+        // setter方法
+        set name(value) {
+          this._name = value
+        },
+        // getter方法
+        get name() {
+          return this._name
+        }
+      }
+
+      obj.name = 'zmj'
+      console.log(obj.name)
+    </script>
+  </body>
+</html>

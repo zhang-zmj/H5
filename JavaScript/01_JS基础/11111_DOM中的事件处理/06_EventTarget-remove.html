@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventTarget-remove</title>
+  </head>
+  <body>
+    <button>按钮</button>
+    <script>
+      var btnEl = document.querySelector('button')
+      // 1、将监听函数移除的过程
+      var foo = function () {
+        console.log('监听到按钮的点击')
+      }
+      btnEl.addEventListener('click', foo)
+      // 需求：过5s之后，将这个事件监听移除
+      setTimeout(() => {
+        btnEl.removeEventListener('click', foo)
+      }, 5000)
+    </script>
+  </body>
+</html>

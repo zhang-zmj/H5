@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组手动实现高阶函数</title>
+  </head>
+  <body>
+    <script>
+      // 1、forEach
+      function hyForEach(fn) {
+        for (var i = 0; i < names.length; i++) {
+          fn(names[i], i, names)
+        }
+      }
+
+      Array.prototype.hyForEach = function (fn, thisArgs) {
+        for (var i = 0; i < this.length; i++) {
+          fn(this[i], i, this)
+        }
+      }
+
+      // 2、find
+      var students = [
+        { id: 100, name: 'why', age: 18 },
+        { id: 101, name: 'kobe', age: 30 },
+        { id: 102, name: 'james', age: 25 },
+        { id: 103, name: 'why', age: 22 }
+      ]
+
+      Array.prototype.hyFind = function (fn) {
+        for (var i = 0; i < this.length; i++) {
+          var isFlag = fn(this[i], i, this)
+          if (isFlag) {
+            return this[i]
+          }
+        }
+      }
+
+      var findStu = students.hyFind(function (item, index, arr) {
+        console.log(item)
+        return item.id === 101
+      })
+      console.log(findStu)
+    </script>
+  </body>
+</html>

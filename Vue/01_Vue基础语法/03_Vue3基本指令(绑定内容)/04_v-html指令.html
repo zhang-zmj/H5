@@ -7,6 +7,7 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- 更新元素的 innerHTML。 -->
     <div id="app"></div>
 
     <template id="my-app">
@@ -17,14 +18,14 @@
 
     <script>
       const App = {
-        template: "#my-app",
+        template: '#my-app',
         data() {
           return {
-            info: `<span style="color:red; font-size:30px">哈哈</span>`,
-          };
-        },
-      };
-      Vue.createApp(App).mount("#app");
+            info: `<span style="color:red; font-size:30px">哈哈</span>`
+          }
+        }
+      }
+      Vue.createApp(App).mount('#app')
     </script>
   </body>
 </html>

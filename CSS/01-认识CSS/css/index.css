@@ -1,0 +1,7 @@
+/* 第一种方式引入 */
+@import url(./style.css);
+@import url(./test.css);
+
+/* 第二种方式引入 */
+/* @import './style.css';
+@import './test.css'; */

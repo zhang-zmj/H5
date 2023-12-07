@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>JavaScript和浏览器的交互方式</title>
+  </head>
+  <body>
+    <script>
+      // 1、alert函数
+      alert('Hello World')
+
+      // 2、log函数
+      console.log('Hello zhangmj')
+
+      // 3、document.write()
+      document.write('Hello Kobe')
+
+      // 4、prompt函数, 作用获取用户输入的内容
+      var result = prompt('请输入你的名字')
+      alert('您刚才输入的内容是:' + result)
+    </script>
+  </body>
+</html>
+
+<!-- 
+
+
+PC端、移动端响应式布局的常用解决方案
+
+一、像素：
+1、物理像素（DP）：
+  一个物理像素点对应显示器上的一个发光点， 屏幕从出厂开始就固定了物理像素点的数量，单位是pt。
+
+2、逻辑像素(DIP):
+  指在css中使用的像素，单位px；逻辑像素是相对单位，相对于物理像素点而言的
+  逻辑像素的大小是可以改变的，可以通过缩放来改变逻辑像素的大小
+
+3、设备像素比（DPR）：
+  设备像素比 = 物理像素 / 逻辑像素
+  1、DPR = 1: 1个逻辑像素对应1个物理像素
+  2、DPR = 2: 1个逻辑像素对应4个物理像素
+  3、DPR = 3: 1个逻辑像素对应9个物理像素
+  注意：
+
+4、像素密度(PPI):
+    表示每英寸面积内像素的数量(疏密程度)，
+    PPI的值越高，表示在一定尺寸的屏幕上像素数量越多
+
+二、视口：
+  指用于显示网页的区域，在PC端，其大小是浏览器的可视区域的大小
+  视口的大小是可以改变的，可以通过缩放来改变视口的大小，调整的是body的大小
+  1、布局视口（layout viweport）：
+      指网页的默认视口，它的大小是固定的，一般是980px
+  2、视觉视口（visual viewport）：
+      指用户可以看到页面的区域，视觉视口的大小是可以改变的
+  3、理想视口（idea viewport）：
+      指网页在移动端设备上的最佳视口，视口的大小是可以改变的
+      理想视口的大小一般是设备的宽度，理想视口的大小是可以改变的
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  4、动态改变meta viewport标签：
+    第一种：
+      document.write('<meta name="viewport" content="width=device-width,initial-scale=1">')
+
+    第二种：
+      <meta id="testViewport" name="viewport" content="width = 380">
+      <script>
+      var mvp = document.getElementById('testViewport');
+      mvp.setAttribute('content','width=480');
+      </script>
+
+三、移动端开发单位：
+    ios开发单位：pt android开发单位：dp
+ 1、em：
+    ①、作为font-size时，其代表父元素字体大小，如果没有父元素或父元素未设置字体大小，则代表浏览器默认字体大小
+    ②、作为其他属性单位时，代表自身字体大小
+2、rem：
+    ①、作用于非根元素时，等于根元素字体大小
+    ②、作用于根元素字体大小时，等于初始字体大小（16px） 
+
+3、PC端最小像素是12px，移动端最小像素是8px
+
+四、移动端适配方案：
+ 
+1、媒体查询
+
+2、百分比
+https://blog.csdn.net/weixin_55846296/article/details/128641005
+
+
+3、自适应场景下的rem解决方案
+①、rem单位：
+  默认情况下：
+    html元素的font-size为16px，所以： 1 rem = 16px
+
+    为了计算方便，通常可以将html的font-size设置成： 
+       html{ font-size: 62.5% }  这种情况下： 1 rem = 10px
+
+②、通过rem来实现响应式布局
+    rem单位都是相对于根元素html的font-size来决定大小的，
+    如果通过rem来实现响应式的布局，只需要根据视图容器的大小，动态的改变font-size即可。
+    function refreshRem() {
+        var docEl = doc.documentElement;
+        var width = docEl.getBoundingClientRect().width;
+        var rem = width / 10;
+        docEl.style.fontSize = rem + 'px';
+        flexible.rem = win.rem = rem;
+    }
+    win.addEventListener('resize', refreshRem);
+
+③、单位换算： rem2px和px2rem
+    rem2px表示从rem换算成px； px2rem表示的是从px转化为rem。
+ 第一种： webpck loader形式
+          npm install px2rem-loader
+      在webpack的配置文件中：
+        module.exports = {
+          // ...
+          module: {
+            rules: [{
+              test: /\.css$/,
+              use: [{
+                loader: 'style-loader'
+              }, {
+                loader: 'css-loader'
+              }, {
+                loader: 'px2rem-loader',
+                // options here
+                options: {
+                  remUni: 75,
+                  remPrecision: 8
+                }
+              }]
+            }]
+          }
+        }
+ 第二种： webpack中使用postcss plugin
+          npm install postcss-loader
+    在webpack的plugin中:
+          var px2rem = require('postcss-px2rem');
+
+          module.exports = {
+            module: {
+              loaders: [
+                {
+                  test: /\.css$/,
+                  loader: "style-loader!css-loader!postcss-loader"
+                }
+              ]
+            },
+            postcss: function() {
+              return [px2rem({remUnit: 75})];
+            }
+          }
+ 第三种：vite方式：
+          npm install postcss-px2rem -S
+
+    vue.config.js中配置remUnit
+          const port = process.env.port || 8081 // 端口
+          module.exports = {
+            devServer: {
+              host: '0.0.0.0',
+              port: port,
+              open: true,
+            },
+            css: {
+              loaderOptions: {
+                css: {},
+                postcss: {
+                  plugins: [
+                    require('postcss-px2rem')({
+                      remUnit: 100  //如果这样写：75
+                    })
+                  ]
+                }
+              }
+            }
+          }
+
+或者 
+
+      // 引入等比适配插件
+      const px2rem = require('postcss-px2rem')
+
+      // 配置基本大小
+      const postcss = px2rem({
+        // 这里的16是默认的基准，因为根元素字体的默认大小就是16
+        remUnit: 16
+      })
+
+      // 使用等比适配插件
+      module.exports = {
+        lintOnSave: true,
+        css: {
+          loaderOptions: {
+            postcss: {
+              plugins: [
+                postcss
+              ]
+            }
+          }
+        }
+      }
+
+postcss-px2rem插件不能把行内样式进行pxTorem的转换
+
+
+通过js改变html的fontsize值
+
+    <script type="text/javascript">
+			function getHtmlFontSize() {
+				//获取设备宽度
+				let deviceWidth = document.documentElement.clientWidth || window.innerWidth;
+				console.log("[设备宽度]", deviceWidth);
+				if (deviceWidth >= 750) {
+					deviceWidth = 750;
+				} else if (deviceWidth <= 320) {
+					deviceWidth = 320;
+				}
+				//设置html的字体大小为：1rem=100px;以设计原型750，如果设计稿是640px，font-size=100px,则为deviceWidth/6.4
+				document.documentElement.style.fontSize = (deviceWidth / 7.5) + 'px';
+
+        //如果这样写：75  
+        document.documentElement.style.fontSize = (deviceWidth / 10) + 'px';
+		
+     * //设置默认字体大小
+18   * document.body.style.fontSize = 0.3 + 'rem'
+    
+    	}
+			getHtmlFontSize();
+			window.addEventListener("resize", getHtmlFontSize)
+		</script>
+
+     一直不太明白为什么remUnit设置为100，通过项目中不断的改变remUnit值，
+      发现这里remUnit值是为了把px转换成rem的计算值，
+      即remUnit=100，
+      则1rem=100px, 1px=0.01rem
+      当项目中我们在css样式中设置width：750px时，经过[postcss-px2rem]这个插件转换
+      remStyle:转换后的值(单位：rem)
+      pxStyle:转换前的值(单位：px)
+      remStyle=(pxStyle/remUnit)+'rem'
+      得到：width: 7.5rem
+
+        //该模块实现移动端rem布局
+       function remSize() {
+         let deviceWidth = document.documentElement.clientWidth || window.innerWidth //获取屏幕宽度
+         if (deviceWidth >= 750) {
+           deviceWidth = 750  //pc端屏幕宽度如果大于750也直接设置成750
+         }
+         if (deviceWidth <= 320) {
+           deviceWidth = 320  //移动端屏幕宽度不能小于320
+         }
+         
+         //设计稿是750px
+         //设置一半的宽度。就是375px
+         //1rem = 100px的设计稿宽度
+         //一半宽度rem就是 3.75rem
+        document.documentElement.style.fontSize = (deviceWidth / 7.5) + 'px'
+         
+         //设置默认字体大小
+         document.body.style.fontSize = 0.3 + 'rem'
+       }
+         
+       remSize()
+         
+       window.onresize = function () {
+         remSize()
+       }
+
+
+④、rem 布局的缺点
+  * 在响应式布局中，必须通过js来动态控制根元素font-size的大小。
+  * 也就是说css样式和js代码有一定的耦合性。且必须将改变font-size的代码放在css样式之前。
+
+
+
+
+4、vh、vw方案：
+①、什么是vw/vh ?
+  * vw：1vw等于视口宽度的1%
+  * vh: 1vh等于视口高度的1%
+  * vmin: vw和vh中较小的那个
+  * vmax: vw和vh中较大的那个
+
+②、vw单位换算
+  * 将px换算成vw单位
+      1px = （1/375）*100 vw
+  * postcss-px-to-viewport可以自动将px转化成vw。
+    默认参数为：
+      var defaults = {
+        viewportWidth: 320,
+        viewportHeight: 568, 
+        unitPrecision: 5,
+        viewportUnit: 'vw',
+        selectorBlackList: [],
+        minPixelValue: 1,
+        mediaQuery: false
+      };
+    通过指定视窗的宽度和高度，以及换算精度，就能将px转化成vw。
+
+③、vw/vh单位的兼容性
+  * 但是ie9-11不支持vmin和vmax，
+  * opera浏览器整体不支持vw单位 ，如果需要兼容opera浏览器的布局，不推荐使用vw。
+
+
+五、常用的网站：
+1、屏幕尺寸查询：
+  https://screensiz.es
+2、浏览器兼容
+  https://caniuse.com/ 
+
+ -->

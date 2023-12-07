@@ -7,6 +7,11 @@
     <title>Document</title>
   </head>
   <body>
+    <!--
+       template元素可以当做不可见的包裹元素，并且在v-if上使用，
+          但是最终template不会被渲染出来
+        有点类似于小程序中的block
+     -->
     <div id="app"></div>
 
     <template id="my-app">
@@ -29,14 +34,14 @@
 
     <script>
       const App = {
-        template: "#my-app",
+        template: '#my-app',
         data() {
           return {
-            isShowHa: true,
-          };
-        },
-      };
-      Vue.createApp(App).mount("#app");
+            isShowHa: true
+          }
+        }
+      }
+      Vue.createApp(App).mount('#app')
     </script>
   </body>
 </html>

@@ -18,10 +18,6 @@ export default class App extends PureComponent {
     console.log(this.state.username, this.state.password)
   }
 
-  // handleUsernameChange(event) {
-  //   this.setState({ username: event.target.value })
-  // }
-
   // handlePasswordChange(event) {
   //   this.setState({ password: event.target.value })
   // }

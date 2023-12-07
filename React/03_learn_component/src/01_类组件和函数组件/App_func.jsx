@@ -5,3 +5,9 @@ function App(props) {
 }
 
 export default App
+
+/*
+1、没有生命周期，也会被更新并挂载，但是没有生命周期函数
+2、this关键字不能指向组件实例（因为没有组件实例）
+3、没有内部状态（state）
+*/

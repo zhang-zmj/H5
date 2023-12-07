@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>普通对象的原型</title>
+  </head>
+  <body>
+    <script>
+      var obj = {
+        name: 'why',
+        age: 18
+      }
+
+      /*
+      获取普通对象的原型
+        方式一：通过对象的 __proto__属性可以获取到（这个是早期浏览器自己添加的，存在一定的兼容性问题）
+        方式二：通过Object.getPrototypeOf方法可以获取到
+      */
+      console.log(obj.__proto__) //指向Object
+      console.log(Object.getPrototypeOf(obj))
+      console.log(obj.__proto__ === Object.getPrototypeOf(obj))
+
+      /*
+       疑问： 这个原型有什么作用呢？
+        当我们通过[[get]]方式获取一个属性对应的value时
+          * 1> 它会优先在自己的对象中查找, 如果找到直接返回
+          * 2> 如果没有找到, 那么会在原型对象中查找
+      */
+      console.log(obj.name)
+      obj.__proto__.message = 'Hello World'
+      console.log(obj.message)
+    </script>
+  </body>
+</html>

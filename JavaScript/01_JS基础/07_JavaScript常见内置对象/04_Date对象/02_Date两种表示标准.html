@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date两种表示标准</title>
+  </head>
+  <body>
+    <script>
+      var date = new Date()
+
+      console.log(date) // 默认打印的时间是 RFC 2822 标准
+      console.log(date.toISOString()) // 转成ISO 8601 标准
+      console.log(date.toDateString())
+
+      /*
+         YYYY：年份，0000 ~ 9999
+         MM：月份，01 ~ 12
+         DD：日，01 ~ 31
+         T：分隔日期和时间，没有特殊含义，可以省略
+         HH：小时，00 ~ 24
+         mm：分钟，00 ~ 59
+         ss：秒，00 ~ 59
+         .sss：毫秒
+         Z：时区
+      */
+    </script>
+  </body>
+</html>

@@ -12,9 +12,7 @@
     <template id="my-app">
       <div>
         <div :style="[style1Obj, style2Obj]">哈哈哈</div>
-        <img src="" alt="" srcset="" />
-        <a href=""></a>
-        <div :class></div>
+        <div :style="[style1Obj, {backgroundColor: 'purple'}]">呵呵呵呵呵呵</div>
       </div>
     </template>
 
@@ -22,21 +20,21 @@
 
     <script>
       const App = {
-        template: "#my-app",
+        template: '#my-app',
         data() {
           return {
-            message: "Hello World",
+            message: 'Hello World',
             style1Obj: {
-              color: "red",
-              fontSize: "30px",
+              color: 'red',
+              fontSize: '30px'
             },
             style2Obj: {
-              textDecoration: "underline",
-            },
-          };
-        },
-      };
-      Vue.createApp(App).mount("#app");
+              textDecoration: 'underline'
+            }
+          }
+        }
+      }
+      Vue.createApp(App).mount('#app')
     </script>
   </body>
 </html>

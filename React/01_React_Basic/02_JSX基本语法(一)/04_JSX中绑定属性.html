@@ -35,20 +35,18 @@
           const className = `abc cba ${isActive ? 'active' : ''}`
           //2、class绑定的写法二：将所有的class放到数组中
           const classList = ['abc', 'cba']
-          if (isActive) {
-            classList.push('active')
-          }
+          if (isActive) classList.push('active')
 
           // 3.class绑定的写法三: 第三方库classnames -> npm install classnames
-
           return (
             <div>
               {/* 1、基本属性绑定*/}
               <h2 title={title}>我是h2元素</h2>
-              {/* <img src={imgURL} alt="" /> */}
+              <img src={imgURL} alt="" />
               <a href={href}>百度一下</a>
 
               {/* 2、绑定class属性：最好使用className */}
+              <h2 className="abc cba"></h2>
               <h2 className={className}>哈哈哈</h2>
               <h2 className={classList.join(' ')}>哈哈哈哈</h2>
 

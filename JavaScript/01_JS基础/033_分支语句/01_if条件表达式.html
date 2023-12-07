@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if条件表达式</title>
+  </head>
+  <body>
+    <script>
+      /*
+        代码块：
+            1、用{}包围起来的代码，JS中的代码块，只具有分组的作用
+            2、代码块中的内容，在外部是完全可见的
+        if条件表达式
+            if(条件表达式A){
+                条件A满足执行的语句;
+            }else if(条件表达式B){
+                条件B满足执行的语句;
+            }
+            ... ...
+            else{
+                前面所有条件都不满足执行的语句;
+            }
+        注意：
+            如果if语句对应的代码块, 只有一行代码, 那么{}可以省略
+      */
+
+      //  1、代码块
+      {
+        var a = 2
+        // alert("smyhvae");
+        console.log('永不止步')
+      }
+      console.log('a = ' + a)
+
+      // 2、if判断
+      var score = 99
+      if (score > 90) {
+        console.log('去游乐场玩~')
+      }
+
+      // 3、注意内容
+      var totalPrice = 10
+      if (weight > 5) totalPrice -= 8
+
+      // 4、if-else判断
+      if (score > 90) {
+        console.log('去游乐场玩~')
+      } else {
+        console.log('去上补习班~')
+      }
+
+      // 5、if-else if-else
+      if (score > 90) {
+        alert('您的评级是优秀!')
+      } else if (score > 80) {
+        alert('您的评级是良好!')
+      } else if (score >= 60) {
+        alert('您的评级是合格!')
+      } else {
+        alert('不及格!!!')
+      }
+    </script>
+  </body>
+</html>

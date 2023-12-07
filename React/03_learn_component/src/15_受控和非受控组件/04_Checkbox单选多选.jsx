@@ -4,15 +4,12 @@ export default class App extends PureComponent {
   constructor() {
     super()
     this.state = {
-      username: '',
-      password: '',
       isAgree: false,
       hobbies: [
         { value: 'sing', text: '唱', isChecked: false },
         { value: 'dance', text: '跳', isChecked: false },
         { value: 'rap', text: 'rap', isChecked: false }
-      ],
-      fruit: 'orange'
+      ]
     }
   }
 
@@ -21,8 +18,8 @@ export default class App extends PureComponent {
     event.preventDefault()
 
     // 2.获取到所有的表单数据, 对数据进行组件
-    console.log('获取所有的输入内容')
-    // console.log(this.state.username, this.state.password)
+    const hobbies = this.state.hobbies.filter(item => item.isChecked).map(item => item.value)
+    console.log('获取爱好----', hobbies)
   }
 
   handleAgreeChange(event) {
@@ -37,7 +34,7 @@ export default class App extends PureComponent {
   }
 
   render() {
-    const { isAgree, hobbies, fruit } = this.state
+    const { isAgree, hobbies } = this.state
     return (
       <div>
         <form onSubmit={e => this.handleSubmitClick(e)}>
@@ -65,13 +62,7 @@ export default class App extends PureComponent {
             })}
           </div>
 
-          {/* 3.select */}
-          <select>
-            <option value="apple">苹果</option>
-            <option value="orange">橘子</option>
-            <option value="banana">香蕉</option>
-          </select>
-
+  
           <div>
             <button type="submit">注册</button>
           </div>

@@ -12,6 +12,7 @@
     </style>
   </head>
   <body>
+    <!-- 指令保持在元素上直到关联组件实例结束编译 -->
     <div id="app"></div>
 
     <template id="my-app">
@@ -22,14 +23,14 @@
 
     <script>
       const App = {
-        template: "#my-app",
+        template: '#my-app',
         data() {
           return {
-            info: "哈哈哈哈哈",
-          };
-        },
-      };
-      Vue.createApp(App).mount("#app");
+            info: '哈哈哈哈哈'
+          }
+        }
+      }
+      Vue.createApp(App).mount('#app')
     </script>
   </body>
 </html>

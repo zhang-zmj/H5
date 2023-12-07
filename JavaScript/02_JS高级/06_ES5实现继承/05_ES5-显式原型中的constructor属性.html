@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>显式原型中的属性</title>
+  </head>
+  <body>
+    <script>
+      /*
+        上面那几节讲了什么？
+          对象的原型：
+            1、查找某一属性时，在自己的对象里找不到，就会在原型中查找
+            2、隐式原型
+
+          函数的原型；
+            1、函数通过new构造对象时，将函数的显示原型赋值给对象的隐式原型
+            2、显示原型
+      */
+
+      /*
+      显示原型中的属性：
+        constructor, 指向Person函数
+      */
+      function Person() {}
+
+      var PersonPrototype = Person.prototype
+      //打印prototype，看看里面的显示原型
+      console.log(PersonPrototype)
+
+      //constructor, 指向Person函数
+      console.log(PersonPrototype.constructor)
+
+      //验证是否相等
+      console.log(PersonPrototype.constructor === Person)
+
+      //2、实例对象p
+      var p = new Person()
+      console.log(p.__proto__.constructor)
+      console.log(p.__proto__.constructor.name)
+
+      
+    </script>
+  </body>
+</html>

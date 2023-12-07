@@ -54,12 +54,13 @@
           // 3.返回jsx的内容
           return (
             <div>
+              {/*一、嵌入变量作为子元素 */}
               {/* 1、Number/String/Array直接显示出来 */}
               <h2>{message}</h2>
               <h2>{counter}</h2>
               <h2>{names}</h2>
 
-              {/* 2、undefined/null/Boolean */}
+              {/* 2、undefined/null/Boolean 什么也不显示 */}
               <h2>{String(aaa)}</h2>
               <h2>{bbb + ''}</h2>
               <h2>{ccc.toString()}</h2>
@@ -68,6 +69,7 @@
               <h2>{friend.name}</h2>
               <h2>{Object.keys(friend)[0]}</h2>
 
+              {/*二、嵌入表达式 */}
               {/* 4、可以插入对应的表达式 */}
               <h2>{10 + 20}</h2>
               <h2>{firstName + ' ' + lastName}</h2>

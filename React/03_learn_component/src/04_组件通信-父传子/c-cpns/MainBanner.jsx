@@ -19,7 +19,7 @@ export class MainBanner extends Component {
 
     return (
       <div className="banner">
-        <h2>封装一个轮播图：{title}</h2>
+        <h2>封5装一个轮播图：{title}</h2>
         <ul>
           {banners.map(item => {
             return <li key={item.acm}>{item.title}</li>
@@ -32,7 +32,7 @@ export class MainBanner extends Component {
 
 // MainBanner传入的props类型进行验证
 MainBanner.propTypes = {
-  banners: PropTypes.array,
+  banners: PropTypes.array.isRequired,
   title: PropTypes.string
 }
 
@@ -43,3 +43,4 @@ MainBanner.defaultProps = {
 }
 
 export default MainBanner
+3

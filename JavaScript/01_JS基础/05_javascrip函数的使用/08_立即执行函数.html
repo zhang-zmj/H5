@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>立即执行函数</title>
+  </head>
+  <body>
+    <script>
+      //常见写法一：
+      ;(function () {
+        console.log('立即执行函数被调用~')
+      })() //常见写法二：
+      ;(function (fn) {
+        console.log('立即执行函数被调用')
+      })() +
+        //常见写法三： +(正号)-(符号)!(取反) - 了解
+        (function foo() {})()
+    </script>
+
+    <script>
+      ;(function () {
+        var message = 'Hello World'
+        // console.log(message)
+      })()
+
+      // 使用立即执行函数
+      var btnEls = document.querySelectorAll('.btn')
+      for (var i = 0; i < btnEls.length; i++) {
+        var btn = btnEls[i]
+        ;(function (m) {
+          btn.onclick = function () {
+            console.log(`按钮${m + 1}发生了点击`)
+          }
+        })(i)
+      }
+    </script>
+  </body>
+</html>

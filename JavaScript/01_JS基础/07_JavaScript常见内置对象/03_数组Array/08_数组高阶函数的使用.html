@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组高阶函数的使用</title>
+  </head>
+  <body>
+    <script></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组高阶函数的使用</title>
+  </head>
+  <body>
+    <script>
+      var names = ['abc', 'cba', 'nba', 'mba']
+      var nums = [11, 20, 55, 100, 88, 32]
+      // 1、forEach函数
+      // names.forEach(
+      //   function (item) {
+      //     console.log(item, this)
+      //   },
+      //   { name: 'why' }
+      // )
+
+      // 2、filter函数: 过滤
+      // var newNums = nums.filter(function (item) {
+      //   return item % 2 === 0
+      // })
+      // console.log(newNums)
+
+      // 3、map函数: 映射
+      // var newNums = nums.map(function (item) {
+      //   return item * item
+      // })
+      // console.log(newNums)
+
+      // 4、reduce函数
+      // var result = nums.reduce(function (preValue, item) {
+      //   console.log(`preValue:${preValue} item:${item}`)
+      //   return preValue + item
+      // }, 0)
+      // console.log(result)
+
+      // var products = [
+      //   { name: '鼠标', price: 88, count: 3 },
+      //   { name: '键盘', price: 200, count: 2 },
+      //   { name: '耳机', price: 9.9, count: 10 }
+      // ]
+      // var totalPrice = products.reduce(function (preValue, item) {
+      //   return preValue + item.price * item.count
+      // }, 0)
+      // console.log(totalPrice)
+
+      var total = nums
+        .filter(item => item % 2 === 0)
+        .map(item => item * item)
+        .reduce((preValue, item) => preValue + item, 0)
+      console.log(total)
+    </script>
+  </body>
+</html>

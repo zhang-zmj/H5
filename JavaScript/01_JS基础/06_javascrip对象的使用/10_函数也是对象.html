@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript一些现象</title>
+  </head>
+  <body>
+    <!-- 
+      function与Function的区别：
+        1、Function是一个构造函数，用于创建一个对象
+        2、function是一个关键字可以声明一个函数对象
+        3、在JavaScript 中声明一个函数本质上为创建Function对象的一个实例，而函数名则为实例名
+        4、每个 JavaScript 函数实际上都是一个 Function 对象。
+            运行 (function(){}).constructor === Function  // true 便可以得到这个结论
+     -->
+    <script>
+      /*
+        var obj = {} (字面量写法) / new Object()
+        var foo = function () {}  (字面量写法)  / new Function()
+      */
+      var obj = {} // 堆内存
+      var foo = function () {} // 堆内存
+      function bar() {} // 堆内存
+      console.log(typeof obj) // object
+      console.log(typeof foo) // function -> object
+    </script>
+  </body>
+</html>

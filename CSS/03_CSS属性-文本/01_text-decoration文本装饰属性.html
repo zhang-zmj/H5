@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>text-decoration</title>
+    <style>
+      /*
+        文本装饰:
+          1、a元素默认有添加text-decoration
+          2、其他元素的一些属性：
+            underline 下划线
+            line-through 删除线
+            overline 上划线
+            none 什么都没有, 最常见的用途就是用于去掉超链接的下划线
+       */
+      .baidu {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .google {
+        text-decoration: line-through;
+        color: red;
+      }
+
+      .bing {
+        text-decoration: overline;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- a元素默认有添加text-decoration -->
+    <a href="http://www.baidu.com">百度一下</a>
+
+    <!-- span元素也添加装饰线 -->
+    <span class="baidu">百度一下</span>
+
+    <!-- 装饰线其他的值 -->
+    <span class="google">Google一下</span>
+    <span class="bing">必应一下</span>
+  </body>
+</html>

@@ -22,7 +22,7 @@ export default class App extends PureComponent {
           unmountOnExit={true}
           classNames="zmj"
           timeout={2000}
-          appear
+          appear //第一次出现的时候有动画
           onEnter={e => console.log('开始进入动画')}
           onEntering={e => console.log('执行进入动画')}
           onEntered={e => console.log('执行进入结束')}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>函数作为参数使用</title>
+  </head>
+  <body>
+    <script>
+      
+      //1、函数声明,fn是变量,fn是参数,
+      function f1(fn) {
+        fn() //函数调用---说明fn这个变量中存储的是一个函数
+      }
+
+      function f2() {
+        console.log('哦,这也可以')
+      }
+      f1(f2)
+
+      // 2、回调函数
+      function request(url, callback) {
+        console.log('根据URL向服务器发送网络请求')
+        console.log('需要花费比较长的时间拿到对应的结果')
+        var list = ['javascript', 'javascript学习', 'JavaScript高级编程']
+        callback(list)
+      }
+
+      // 传入的函数是没有名字, 匿名函数
+      request('url', function (res) {
+        console.log('在handleResult中拿到结果:', res)
+      })
+
+    </script>
+  </body>
+</html>

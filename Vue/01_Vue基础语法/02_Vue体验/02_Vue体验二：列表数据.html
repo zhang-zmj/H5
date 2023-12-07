@@ -11,8 +11,6 @@
     <script src="../js/vue.js"></script>
     <script>
       const app = Vue.createApp({
-        //插值语法
-        // template: `<h2>{{message}}</h2>`,
         template: `
         <h2>电影列表</h2>
           <ul>
@@ -21,8 +19,7 @@
         `,
         data() {
           return {
-            message: '你好啊，张明军',
-            movies: ['大话西游', '星际穿越', '盗梦空间', '少年派']
+              movies: ['大话西游', '星际穿越', '盗梦空间', '少年派']
           }
         }
       })

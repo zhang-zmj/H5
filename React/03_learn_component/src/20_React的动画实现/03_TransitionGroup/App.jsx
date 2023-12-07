@@ -32,6 +32,7 @@ export default class App extends PureComponent {
     return (
       <div>
         <h2>书籍列表:</h2>
+        {/* component要渲染成的元素 */}
         <TransitionGroup component="ul">
           {books.map((item, index) => {
             return (

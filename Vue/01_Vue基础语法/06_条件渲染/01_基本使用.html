@@ -9,7 +9,7 @@
   <body>
     <div id="app"></div>
     <template id="my-app">
-      <div>
+      <div v-if="Object.keys(info).length">
         <h2 v-if="isShow">哈哈哈哈</h2>
         <button @click="toggle">切换</button>
       </div>
@@ -23,7 +23,8 @@
         data() {
           return {
             message: 'Hello World',
-            isShow: true
+            isShow: true,
+            info: { name: 'zhang' }
           }
         },
         methods: {

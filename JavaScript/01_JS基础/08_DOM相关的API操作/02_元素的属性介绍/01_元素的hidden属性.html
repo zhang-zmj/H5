@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>元素的hidden属性</title>
+  </head>
+  <body>
+    <button class="btn">切换</button>
+
+    <!-- hidden属性 -->
+    <div id="box" class="cba" title="aaa" style="color: red">哈哈哈哈哈</div>
+
+    <script>
+      var boxEl = document.querySelector('#box')
+      var btnEl = document.querySelector('.btn')
+
+      btnEl.onclick = function () {
+        // 1、只隐藏
+        // boxEl.hidden = true
+        // boxEl.style.display = 'none'
+
+        boxEl.hidden = !boxEl.hidden
+      }
+    </script>
+  </body>
+</html>

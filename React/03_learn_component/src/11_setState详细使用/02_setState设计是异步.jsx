@@ -25,8 +25,8 @@ export class App extends Component {
   }
 
   increment() {
+    // 变量展示的结果是 1
     /*
-    
     this.setState({
       counter: this.state.counter + 1
     })
@@ -39,6 +39,7 @@ export class App extends Component {
     
     */
 
+    // 变量展示的结果是 3
     //获取到更新后的值的情况
     this.setState(state => {
       return {

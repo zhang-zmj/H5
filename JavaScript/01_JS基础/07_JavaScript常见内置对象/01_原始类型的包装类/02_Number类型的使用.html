@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number类型的使用</title>
+  </head>
+  <body>
+    <script>
+      // 1、类属性：
+      console.log(Number.MAX_VALUE)
+      console.log(Number.MIN_VALUE)
+      console.log(Number.MAX_SAFE_INTEGER)
+      console.log(Number.MIN_SAFE_INTEGER)
+
+      /*
+         2、对象的方法 toString(base)  
+            按照base进制进行转化，的范围可以从 2 到 36，默认情况下是 10；
+            * 注意：如果是直接对一个数字操作，需要使用..运算符；
+      */
+      var num = 1000
+      console.log(num.toString(), typeof num.toString())
+      console.log(num.toString(2))
+      console.log(num.toString(8))
+      console.log((1000).toString(2))
+
+      /*
+        3、toFixed(digits)，格式化一个数字，保留digits位的小数；范围是0到20（包含）之间
+           parseInt 与 parseFloat都有对应的全局方法。
+      */
+      var number = '123.521'
+      console.log(Number(number).toFixed(0))
+      console.log(Number.parseInt(number))
+      console.log(Number.parseFloat(number))
+
+      console.log(parseInt === Number.parseInt)
+    </script>
+  </body>
+</html>

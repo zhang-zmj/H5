@@ -35,8 +35,10 @@
             console.log('旧值：', oldValue, '新值：', newValue)
             this.queryAnswer()
 
-            // 获取原生对象
+            // 获取原始对象
             console.log(Vue.toRaw(newValue))
+            // 新对象
+            console.log({ ...newValue })
           }
         },
         methods: {

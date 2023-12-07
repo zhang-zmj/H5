@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象的遍历方式</title>
+  </head>
+  <body>
+    <script>
+      var info = {
+        name: 'zhangmj',
+        age: 18,
+        height: 1.88
+      }
+      console.log(Object.keys(info))
+
+      // 对对象进行遍历
+      // 1、普通for循环
+      var infoKeys = Object.keys(info)
+      for (let i = 0; i < infoKeys.length; i++) {
+        var key = infoKeys[i]
+        var value = info[key]
+        console.log(`key: ${key}, value: ${value}`)
+      }
+
+      // 2、for..in..: 遍历对象
+      for (var key in info) {
+        var value = info[key]
+        console.log(`key: ${key}, value: ${value}`)
+      }
+
+      /*
+      for..of
+        1、默认是不能遍历对象。对象不支持
+        2、作用在可迭代对象上（包括 Array，Map，Set，String，TypedArray，arguments 对象等等）
+      */
+      // for (var foo of info) {
+      // }
+    </script>
+  </body>
+</html>

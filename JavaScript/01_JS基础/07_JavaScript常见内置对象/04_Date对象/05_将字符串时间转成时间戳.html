@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>将字符串时间转成时间戳</title>
+  </head>
+  <body>
+    <script>
+
+      // 从一个字符串中读取日期，并且输出对应的Unix时间戳。
+      var timeString = '03/23/2033'
+
+      // 1.方式一:
+      // var date = new Date(timeString)
+      // var timestamp = date.getTime()
+
+      // 2.方式二:
+      var timestamp = Date.parse(timeString)
+      console.log(timestamp)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>创建一系列对象的方式一</title>
+  </head>
+  <body>
+    <script>
+      // 对象创建方式一：
+      var stu1 = {
+        name: 'zmj',
+        age: 18,
+        height: 1.88,
+        running: function () {
+          console.log('running~')
+        }
+      }
+
+      /*
+        对象创建方式二：
+          工厂函数(工厂生产student对象) -> 一种设计模式
+      */
+      function createStudent(name, age, height) {
+        var stu = {}
+        stu.name = name
+        stu.age = age
+        stu.height = height
+        stu.running = function () {
+          console.log('running~')
+        }
+        return stu
+      }
+      var stu2 = createStudent('kobe', 30, 1.98)
+      console.log(stu2)
+
+      /*
+        对象创建方式三：ES5通过构造函数（类）创建
+         如果一个函数被new操作符调用：
+          1、创建出来一个新的空对象
+          2、让this指向这个空对象
+          3、执行函数体的代码块
+          4、如果没有明确的返回一个非空对象, 那么this指向的对象会自动返回
+
+        在ES5之前，通过function声明一个构造函数,之后通过new关键字对其进行调用
+        在ES6之后，通过class关键字声明一个构造函数,之后通过new关键字对其进行调用
+      */
+      function Person(name, age, height) {
+        this.name = name
+        this.age = age
+        this.height = height
+        this.running = function () {
+          console.log('running~')
+        }
+      }
+      var stu3 = new coder('zhangmj', 18, 1.88)
+      console.log(stu3)
+    </script>
+  </body>
+</html>

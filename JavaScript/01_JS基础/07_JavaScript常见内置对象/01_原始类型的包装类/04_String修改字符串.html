@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String修改字符串</title>
+  </head>
+  <body>
+    <script>
+      var message = 'Hello World'
+      // 1、字符串在定义后是不可以修改的
+      message[2] = 'a'
+      console.log(message)
+
+      /*
+        2、字符大、小写 
+          toUpperCase: 将所有的字符变成大写
+          toLowerCase: 将所有的字符变成小写
+      */
+      var message1 = message.toLocaleLowerCase()
+      console.log(message1)
+      var message2 = message.toLocaleUpperCase()
+      console.log(message2)
+    </script>
+  </body>
+</html>

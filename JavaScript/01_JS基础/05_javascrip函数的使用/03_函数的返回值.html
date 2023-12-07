@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数的返回值</title>
+  </head>
+  <body>
+    <!-- 
+      返回值注意事项：
+        1、注意事项一: 所有的函数, 如果没有写返回值, 那么默认返回undefined
+        2、也可明确写上return关键字, 但是后面什么内容都没有的时候, 也是返回undefined
+        3、注意事项三: 如果在函数执行到return关键字时, 函数会立即停止执行, 退出函数
+     -->
+
+    <script>
+      //返回值
+      function returnValue(x, y) {
+        var sum = x + y
+        return sum //必须用return，不用则返回值都是undefined
+      }
+      var value = returnValue(10, 20)
+      alert(value)
+
+      //调用函数时实参的个数和形参的个数可以不相同
+      function getSum(a, b) {
+        console.log(a, b)
+        return a + b
+      }
+      let res = getSum(10, 20, 30)
+      console.log('这个数的结果' + res)
+
+      // 6.JavaScript中的函数和数组一样, 都是引用数据类型(对象类型)
+      // 将来可以通过变量名称找到函数并执行函数
+      let say = function () {
+        console.log('hello world')
+      }
+      say()
+    </script>
+  </body>
+</html>

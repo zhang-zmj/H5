@@ -16,8 +16,8 @@ export default class App extends PureComponent {
   loginClick() {
     localStorage.setItem('token', 'zhangmj')
 
-    // this.setState({ isLogin: true })
-    this.forceUpdate() //暴力更新
+    // this.setState({ isLogin: true })  //写这个方法才会进行render更新
+    this.forceUpdate() //暴力更新 进行render更新
   }
 
   render() {

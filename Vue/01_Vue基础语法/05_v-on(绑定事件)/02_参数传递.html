@@ -31,12 +31,15 @@
           }
         },
         methods: {
+          //1、默认参数：event对象
           btn1Click(event) {
             console.log(event)
           },
+          //2、明确参数
           btn2Click(name, age) {
             console.log(name, age)
           },
+          //3、全参数
           btn3Click(event, name, age) {
             console.log(name, age, event)
           }

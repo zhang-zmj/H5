@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String类型的使用</title>
+  </head>
+  <body>
+    <script>
+      var message = 'Hello World'
+      // 1、length属性
+      console.log(message.length)
+
+      /*
+      2、访问字符串中某个位置的字符
+         方法一与方法二的区别：
+          索引的方式没有找到会返回undefined，而charAt没有找到会返回空字符串；
+      */
+      console.log(message[4])
+      console.log(message.charAt(4))
+      console.log(message[20])
+      console.log(message.charAt(20))
+    </script>
+  </body>
+</html>

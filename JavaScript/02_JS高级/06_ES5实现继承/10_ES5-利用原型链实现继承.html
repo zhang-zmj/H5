@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>原型链实现方法的继承</title>
+  </head>
+  <body>
+    <script>
+      //定义Person构造函数(类)
+      function Person(name, age, height, address) {
+        this.name = name
+        this.age = age
+        this.height = height
+        this.address = address
+      }
+
+      Person.prototype.running = function () {
+        console.log('running~')
+      }
+      Person.prototype.eating = function () {
+        console.log('eating~')
+      }
+
+      // 定义学生类
+      function Student(name, age, height, address, sno, score) {
+        // this.name = name
+        // this.age = age
+        // this.height = height
+        // this.address = address
+
+        this.sno = sno
+        this.score = score
+      }
+
+      //方式一：父类的原型直接赋值给子类的原型
+      //缺点：父类和子类共享同一个原型对象，修改了任意一个，另外一个也被修改
+      // Student.prototype = Person.prototype
+
+      //方式二：创建一个父类的实例对象, 用这个实例对象来作为子类的原型对象
+      var p = new Person('zhangmj', 28)
+      Student.prototype = p
+
+      Student.prototype.studying = function () {
+        console.log('studying~')
+      }
+
+      // 创建学生
+      var stu1 = new Student('zmj', 18, 1.88, '杭州', 111, 100)
+      var stu2 = new Student('hhh', 20, 2.22, '上海', 112, 110)
+      stu1.running()
+      stu1.studying()
+
+      console.log(stu1.name, stu1.age)
+      console.log(stu1)
+      console.log(stu2.name, stu2.age)
+      console.log(stu2)
+    </script>
+  </body>
+</html>
+<!--
+  原型链继承的弊端：
+    1、子类中重复了父类的属性name、age，
+       如果删除掉打印子类对象，会没有这几个属性
+
+    2、这几个属性会被多个对象共享，如果这个对象是一个引用类型，那么会造成问题
+    
+    3、不能给Person传递参数（让每个stu有自己的属性），因为这个对象时一次创建的
+        
+  -->

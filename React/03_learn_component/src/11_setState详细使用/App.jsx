@@ -29,6 +29,8 @@ export class App extends Component {
     setTimeout(() => {
       // 在react18之前, setTimeout中setState操作, 是同步操作
       // 在react18之后, setTimeout中setState异步操作(批处理)
+
+      //flushSync 把函数中的数据更新一次性更新完毕
       flushSync(() => {
         this.setState({ message: '你好啊, 李银河' })
       })

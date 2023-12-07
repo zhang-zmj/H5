@@ -16,13 +16,13 @@ import ReactDOM from "react-dom/client";
 // import App from "./12_render函数的优化/App";
 // import App from "./13_数据不可变的力量/App";
 // import App from "./14_ref获取DOM和组件/App";
-// import App from "./15_受控和非受控组件/App";
+import App from "./15_受控和非受控组件/App";
 // import App from "./16_React高阶组件/App";
 // import App from "./17_React的Portals/App";
 // import App from "./18_React的fragment/App";
 // import App from "./19_React的严格模式/App";
 // import App from "./20_React的动画实现/02_SwitchTransition/App";
-import App from "./20_React的动画实现/03_TransitionGroup/App";
+// import App from "./20_React的动画实现/03_TransitionGroup/App";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
